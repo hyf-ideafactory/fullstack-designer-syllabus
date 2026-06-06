@@ -592,6 +592,10 @@ export default function App() {
   const [prevCounts, setPrevCounts] = useState({});
 
   const buildInitial = () => {
+    try {
+      const saved = localStorage.getItem("syllabus-progress");
+      if (saved) return JSON.parse(saved);
+    } catch(e) {}
     const init={};
     PHASES.forEach((ph,pi)=>ph.weeks.forEach((w,wi)=>w.sessions.forEach((s,si)=>
       s.tasks.forEach((t,ti)=>{ if(t.done) init[`p${pi}-w${wi}-s${si}-t${ti}`]=true; })
@@ -600,10 +604,24 @@ export default function App() {
   };
   const [completed, setCompleted] = useState(buildInitial);
 
-  const initOdin = () => Object.fromEntries(
-    ODIN_SECTIONS.flatMap(s=>s.lessons).map(l=>[l.id,{done:l.done,date:l.date}])
-  );
+  useEffect(() => {
+    try { localStorage.setItem("syllabus-progress", JSON.stringify(completed)); } catch(e) {}
+  }, [completed]);
+
+  const initOdin = () => {
+    try {
+      const saved = localStorage.getItem("odin-progress");
+      if (saved) return JSON.parse(saved);
+    } catch(e) {}
+    return Object.fromEntries(
+      ODIN_SECTIONS.flatMap(s=>s.lessons).map(l=>[l.id,{done:l.done,date:l.date}])
+    );
+  };
   const [odin, setOdin] = useState(initOdin);
+
+  useEffect(() => {
+    try { localStorage.setItem("odin-progress", JSON.stringify(odin)); } catch(e) {}
+  }, [odin]);
 
   const fireAward = (msg) => {
     setConfetti(true);
