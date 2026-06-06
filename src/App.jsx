@@ -1,543 +1,571 @@
 import { useState } from "react";
 
+// ─── RESOURCE SHOPPING LIST ──────────────────────────────────────────────────
+// Buy BEFORE starting:
+//   • Thinking with Type — Ellen Lupton · ~$25 · Amazon
+//   • Grid Systems in Graphic Design — Müller-Brockmann · ~$50 · Amazon
+// Buy at Week 4:
+//   • Refactoring UI — $99 · refactoringui.com (PDF, Essentials package)
+// Free:
+//   • Atomic Design — bradfrost.com/atomic-design (free online)
+//   • Design Systems Handbook — free PDF, search "InVision design systems handbook"
+//   • Figma free tier, VS Code, The Odin Project, Flexbox Froggy, Grid Garden
+// Already owned:
+//   • The Design of Everyday Things — Don Norman ✓
+
 const PHASES = [
   {
     id: 0,
     label: "Phase 1",
     title: "Foundations",
-    subtitle: "Weeks 1–12 · ~3 months",
+    subtitle: "~6 months part-time · Fri/Sat/Mon + 20 min daily",
     color: "#F0F7FF",
     accent: "#0066FF",
     darkAccent: "#0044CC",
-    tagline: "Build bedrock. Code AND eye simultaneously. Competence is the floor, not the ceiling.",
+    tagline: "Code and eye in parallel. Odin Foundations is a 6-month track — treat it that way. Design taste is built daily, not weekly.",
     weeks: [
       {
         week: 1,
-        theme: "HTML & Visual Hierarchy",
-        goal: "Structure is the first design decision. In code it's HTML. In design it's hierarchy. They are the same discipline.",
+        theme: "Setup, Community & Your First Real Look",
+        goal: "Before you design anything, join the communities you'll learn from. Before you code anything, understand what you're looking at. Week 1 is about orientation — done right.",
         sessions: [
           {
-            day: "Friday, June 5", label: "12:00 PM",
+            day: "Friday, June 6", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "Odin: HTML Foundations — Structure as Intention",
+            duration: "90 min",
+            title: "Odin: Prerequisites — Computer Basics & Command Line",
+            completed: true,
             tasks: [
-              { t: "Open VS Code. Create your first project folder: fullstack-designer/week-01. Open terminal in VS Code (Ctrl+`) — you'll live here.", m: 10 },
-              { t: "Complete Odin 'Introduction to HTML and CSS' lesson. As you read: ask why each tag exists, not just what it does.", m: 30 },
-              { t: "Do the first Odin HTML exercise. Then open the file in Chrome, right-click → Inspect. Spend 10 min reading your own HTML in DevTools — this is your second monitor from now on.", m: 35 },
+              { t: "✓ Introduction to Foundations — DONE last week.", m: 0, done: true },
+              { t: "✓ 'How Does the Web Work?' — DONE today (~100 min). That is the real pace of Odin. Every section takes what it takes.", m: 0, done: true },
+              { t: "Complete 'Computer Basics' lesson. Write: what is the difference between RAM, storage, and a CPU in plain language? If you can't explain it simply, re-read.", m: 30 },
+              { t: "Complete 'Command Line Basics.' Open your VS Code terminal. Practice: pwd, ls, cd, mkdir, touch, rm. Run each 3 times until it feels like muscle memory.", m: 45 },
             ],
-            anchor: "Paul Rand said: 'Design is the silent ambassador of your brand.' HTML is the skeleton of that ambassador. Every tag is a decision about meaning, not just structure.",
+            anchor: "Rand: 'Design is the silent ambassador of your brand.' The command line is the foundation of everything you will build. 100 minutes on one section is not slow — it is the correct pace for material that will govern everything downstream.",
           },
           {
-            day: "Saturday, June 6", label: "12:00 PM",
+            day: "Saturday, June 7", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Visual Hierarchy — The First Law of Perception",
+            title: "Start Your Swipe File + Go Somewhere Beautiful",
             tasks: [
-              { t: "Read Refactoring UI: Chapter 1 (Starting from Scratch). Read with a pen. Underline every principle, not every tip.", m: 25 },
-              { t: "Open Stripe.com, Linear.app, and one site from your own life. Screenshot each. On paper, number every element in the order your eye hits it. Write WHY — size? contrast? position? whitespace?", m: 25 },
-              { t: "Recreate one hero section in Figma. No assets, no color — only rectangles and text. Nail the proportions. Müller-Brockmann's rule: get the structure right and everything else becomes easier.", m: 25 },
+              { t: "Create your Swipe File: a folder with 3 subfolders — Digital, Editorial/Print, Spatial/World. Save 5 things in each that genuinely stop you. Not things you think are good — things that make you feel something.", m: 20 },
+              { t: "Create your Read.cv profile (read.cv — free). Write 2 sentences about what you're building toward. This is your first public commitment as a designer.", m: 15 },
+              { t: "Go somewhere with intentional design today — a museum, a well-designed store, a restaurant, a gallery, a library. Spend 30 min there with full attention. Photograph it. Write: what 3 specific decisions made it feel the way it did?", m: 40 },
             ],
-            anchor: "Vignelli: 'The life of a designer is a life of fight — fight against the ugliness.' Visual hierarchy is your first weapon. If a viewer has to work to understand a layout, the designer failed.",
+            anchor: "Brodovitch told his students: 'If you look at a page and it doesn't astonish you, throw it away.' Begin training your eye in the physical world — it is the fastest way to develop taste that shows up on screen.",
           },
           {
-            day: "Monday, June 8", label: "12:00 PM",
+            day: "Monday, June 9", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Connect Code + Design — Then Teach It Back",
+            title: "Visual Hierarchy — See It Everywhere — Then Teach It Back",
             tasks: [
-              { t: "Build your Saturday Figma hero in VS Code as a static HTML file — structure only, no CSS. Every div should map to a deliberate visual element, not a guess.", m: 35 },
-              { t: "Start your Swipe File: create a folder. Save 10 screenshots — only things that made you stop. Tag each one: what stopped you? Type / Color / Layout / Tension / Surprise.", m: 20 },
-              { t: "FEYNMAN CLOSE (do not skip): Open a blank doc. Write: 'Visual hierarchy means...' and explain it as if teaching someone who has never heard of design. Where you get vague, you have a gap. Go fix it.", m: 20 },
+              { t: "Open Stripe.com, a magazine spread (photograph one or find one online), and a room you find beautiful (architecture or interior photograph). For each: number every element in the order your eye hits it. Write WHY — size, contrast, position, whitespace, color.", m: 35 },
+              { t: "Sketch the hierarchy of one of those three compositions on paper — rectangles and lines only. No detail, just weight and position. Does the sketch capture what you felt looking at the real thing?", m: 20 },
+              { t: "FEYNMAN CLOSE: Open a notes doc. Write: 'Visual hierarchy means...' Explain it using one digital example and one example from the space you visited Saturday. Where you get vague, you have a gap. Go fix it.", m: 20 },
             ],
-            anchor: "Knuth spent 20 years on The Art of Computer Programming because he refused to move on until he understood something completely. The Feynman Close is your version of that discipline. Every Monday ends this way.",
+            anchor: "Brodovitch told his students: 'If you look at a page and it doesn't astonish you, throw it away.' Begin training your eye to recognize — and demand — that astonishment.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Add 1 thing to your Swipe File. Notice design everywhere — storefronts, menus, packaging, buildings. Photograph one piece of exceptional physical design per day this week.",
       },
       {
         week: 2,
-        theme: "CSS & Color Theory",
-        goal: "CSS is design logic in syntax. Color theory is not about beauty — it's about perception, emotion, and system.",
+        theme: "HTML Structure + Color as Feeling",
+        goal: "HTML is the skeleton of every webpage. Color is the first thing a viewer feels before they read a word. Learn both this week with the same level of intentionality.",
         sessions: [
           {
-            day: "Friday, June 12", label: "12:00 PM",
+            day: "Friday, June 13", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "CSS Foundations — Styling with Intent",
+            duration: "90 min",
+            title: "Odin: HTML Foundations — Elements, Tags & Boilerplate",
             tasks: [
-              { t: "Complete Odin 'CSS Foundations' lesson. Focus on the cascade: understand WHY specificity works the way it does, not just how to override it.", m: 30 },
-              { t: "Do the CSS exercises: box model, margins, padding. After each one: open DevTools and inspect what you built. See the box model rendered visually.", m: 25 },
-              { t: "Inspect any site you admire in DevTools. Change 3 colors live. Change a font size. Notice what breaks when you do. This is how exceptional designers learn — by breaking things intentionally.", m: 20 },
+              { t: "Complete 'Introduction to HTML and CSS' lesson. After each tag you learn: ask why it exists. Not what it does — why it exists.", m: 35 },
+              { t: "Complete 'HTML Elements and Tags' and 'HTML Boilerplate' lessons.", m: 35 },
+              { t: "Open your boilerplate in Chrome. Right-click → Inspect. Spend 10 min reading your own HTML in DevTools. This is your second screen from now on.", m: 20 },
             ],
-            anchor: "Dieter Rams: 'Good design is as little design as possible.' CSS is how you make that principle real in a browser. Every property you add should earn its existence.",
+            anchor: "Every HTML tag is a semantic decision — a statement about what something IS, not just how it looks. That is the same discipline as choosing the right word in a headline, or the right object for a set.",
           },
           {
-            day: "Saturday, June 13", label: "12:00 PM",
+            day: "Saturday, June 14", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Color Theory — System, Not Decoration",
+            title: "Color Theory — Atmosphere, Emotion, System",
             tasks: [
-              { t: "Read Refactoring UI: 'Working with Color' section. Note every principle that contradicts what you thought you knew about color.", m: 25 },
-              { t: "Deconstruct Stripe's homepage color palette in Figma using the eyedropper. Find their primary, neutrals, and accent. Write: what emotion does each color group carry? Why does it work for a fintech product?", m: 25 },
-              { t: "Build a 5-shade scale for one color from scratch in Figma (light → dark). Apply it to your Week 1 hero. Does it serve the hierarchy or fight it?", m: 25 },
+              { t: "Watch 'Interaction of Color' intro on YouTube (search Josef Albers Interaction of Color — Yale has free excerpts). Write: what surprised you about how color behaves next to other colors?", m: 25 },
+              { t: "Find one interior photograph, one film still, and one website with exceptional color. For each: identify the 3 dominant colors and write the emotional register they create together. Not 'warm' — specific. 'Quiet authority.' 'Anxious luxury.' 'Childhood memory.'", m: 30 },
+              { t: "In Figma (free tier — figma.com): create a new file. Build a 5-shade scale for one color from scratch. Apply it to a simple rectangle layout. Does it feel like something or just look like something?", m: 20 },
             ],
-            anchor: "Rand understood that color is never neutral — it always carries cultural weight, emotional signal, and spatial meaning simultaneously. Build color systems, not color choices.",
+            anchor: "Saul Leiter photographed New York in color when everyone else was shooting black and white — not for novelty but because color carried emotional information that monochrome couldn't. Use color for what it actually communicates, not for decoration.",
           },
           {
-            day: "Monday, June 15", label: "12:00 PM",
+            day: "Monday, June 16", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Apply Color to Code — Then Teach It Back",
+            title: "HTML + Color Connected — Then Teach It Back",
             tasks: [
-              { t: "Add CSS to your Week 1 HTML page using your color palette. Define colors as CSS custom properties (variables) at the top — not hardcoded hex values. Every exceptional codebase does this.", m: 40 },
-              { t: "Install the Muzli Chrome extension. Open it, read one design article, reverse-engineer the color decisions in 150 words. What was deliberate? What was lazy?", m: 20 },
-              { t: "FEYNMAN CLOSE: Write 'The CSS box model means...' and 'Color contrast matters because...' — two separate explanations, each 4–5 sentences, zero jargon. Gaps = gaps in understanding.", m: 15 },
+              { t: "Build a simple HTML page: your name as an H1, a short bio as a paragraph, and 3 things you're learning as a list. No CSS yet. Semantic and intentional.", m: 30 },
+              { t: "Create a color palette for this page in Figma — 3 colors max. Apply it mentally: what atmosphere would these colors create if they were walls in a room? Write 2 sentences.", m: 20 },
+              { t: "FEYNMAN CLOSE: Write 'HTML structure matters because...' and 'Color communicates before it is read because...' Post your Feynman Close in Design Buddies #critique or The Odin Project Discord. Ask for one piece of feedback.", m: 25 },
             ],
-            anchor: "Maeda's Law 1: 'Reduce.' CSS custom properties are reduction — one source of truth for your entire color system. Maeda's Law 10: 'Simplicity is about subtracting the obvious and adding the meaningful.'",
+            anchor: "Knuth: 'Let us concentrate on explaining to humans what we want the computer to do.' HTML explains to the browser. Color explains to the human. Both require clarity of intention.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Notice color everywhere in the physical world — storefronts, clothing, interiors, packaging. Write one sentence each day: what does this color combination communicate?",
       },
       {
         week: 3,
-        theme: "Typography — The Discipline That Separates Good from Exceptional",
-        goal: "95% of the web is typography. Most designers treat it as decoration. Exceptional designers treat it as architecture.",
+        theme: "Working with Text + Typography as Voice",
+        goal: "HTML text elements and typographic principles are the same discipline. Both are about giving content the right voice. Learn them together this week.",
         sessions: [
           {
-            day: "Friday, June 19", label: "12:00 PM",
+            day: "Friday, June 20", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "CSS Flexbox — Spatial Control",
+            duration: "90 min",
+            title: "Odin: HTML — Working with Text, Lists, Links & Images",
             tasks: [
-              { t: "Complete Odin Flexbox lesson. Read the MDN Flexbox guide alongside it — MDN is your primary reference, always.", m: 25 },
-              { t: "Complete all 24 levels of Flexbox Froggy (flexboxfroggy.com). Don't guess — understand why each answer works before moving on.", m: 30 },
-              { t: "Rebuild your Week 1 HTML page layout using only Flexbox. No hacks, no floats, no absolute positioning. Clean spatial control.", m: 20 },
+              { t: "Complete 'Working with Text' lesson. For every text tag: what is its semantic meaning? What does it communicate to a screen reader, a search engine, a browser?", m: 30 },
+              { t: "Complete 'Lists' lesson. Build a small HTML page using headings, paragraphs, and both ordered and unordered lists — about a topic you genuinely care about.", m: 30 },
+              { t: "Complete 'Links and Images' lesson. Add a link and an image to your page. Inspect both in DevTools — understand what the browser is doing.", m: 30 },
             ],
-            anchor: "Flexbox is how you command space. Müller-Brockmann built entire visual systems on spatial command. Every exceptional layout starts with absolute clarity about how space is organized.",
+            anchor: "Every heading level, every paragraph break is a typographic decision — even in raw HTML. Begin noticing that distinction. It will make you a better HTML writer and a better typographer simultaneously.",
           },
           {
-            day: "Saturday, June 20", label: "12:00 PM",
+            day: "Saturday, June 21", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Typography — Voice Before Words",
+            title: "Typography — The Architecture of Language",
             tasks: [
-              { t: "Read Thinking with Type: Part 1 (Letters). Read slowly. Every principle Lupton names, find a real example of it on a live website.", m: 30 },
-              { t: "Go to Fonts In Use (fontsinuse.com). Find 3 type pairings that feel right to you. For each: write the emotional register it communicates and WHY those two typefaces work together — not just that they do.", m: 25 },
-              { t: "In Figma: set the same 50-word paragraph in 3 different typefaces — a geometric sans, a humanist sans, a serif. Write one sentence per: what personality does each project? Be specific, not vague.", m: 20 },
+              { t: "Read Thinking with Type: Part 1 — Letters (pp. 1–50). You bought this book. Use it like a reference, not a novel — look at every diagram carefully. Write 5 principles that surprised you.", m: 30 },
+              { t: "Go to Fonts In Use (fontsinuse.com) — free. Find 3 typographic pairings that feel right to you. For each: write the emotional personality of the pairing in one specific sentence. Then find the same pairing used in a physical context — a poster, a book, packaging.", m: 25 },
+              { t: "In Figma: set the same 40-word paragraph in 3 typefaces. A geometric sans (Futura or similar), a humanist sans (Inter), a serif (Georgia or Playfair). Write one sentence per typeface: what does this voice sound like?", m: 20 },
             ],
-            anchor: "Vignelli used only 6 typefaces his entire career. Not because he lacked knowledge — because he understood them completely. Depth over breadth. Know a few typefaces the way a musician knows their instrument.",
+            anchor: "Vignelli used only 6 typefaces his entire career. He knew them the way a musician knows their instrument — in every context, at every size, in every combination. Depth over breadth. Always.",
           },
           {
-            day: "Monday, June 22", label: "12:00 PM",
+            day: "Monday, June 23", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Type in the Browser — Then Teach It Back",
+            title: "Type on the Page + Commit Messages — Then Teach It Back",
             tasks: [
-              { t: "Add a Google Font pairing to your CSS project. Use typescale.com to generate a modular scale. Set every text element — don't leave any unstyled. Intentional type, top to bottom.", m: 30 },
-              { t: "Go to Siteinspire.com. Find 3 sites with exceptional typography. For each: identify the type scale, the leading (line-height), and the measure (line length). Write one sentence: what does the type system do for the brand?", m: 25 },
-              { t: "FEYNMAN CLOSE: Write 'A modular type scale works because...' and 'The reason typeface choice affects brand perception is...' No jargon. If you can't explain it simply, you don't own it yet.", m: 20 },
+              { t: "Complete Odin 'Commit Messages' lesson. Make your first 3 meaningful Git commits on your HTML page project. Every commit message should describe the intention, not just the action.", m: 30 },
+              { t: "In Figma: design a simple magazine-style header for your HTML page — headline, subhead, byline. Choose a typeface pairing. Apply your color palette from Week 2.", m: 25 },
+              { t: "FEYNMAN CLOSE: Write 'A typeface communicates personality because...' and 'A Git commit message matters because...' Share both in community this week. The connections you make between concepts are worth sharing.", m: 20 },
             ],
-            anchor: "Bringhurst: 'Typography exists to honor content.' Not to decorate it. Every type decision you make should serve meaning — nothing else.",
+            anchor: "Bringhurst: 'Typography exists to honor content.' So does a commit message. Both are acts of clarity on behalf of another reader — a human who will encounter your work later.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Notice typography everywhere — your phone, a storefront, a cereal box. Photograph one piece of exceptional physical typography per day this week. Add to Swipe File.",
       },
       {
         week: 4,
-        theme: "Layout & Spatial Thinking — The Grid as Discipline",
-        goal: "The grid is not a constraint. It is the structure that makes freedom possible. Learn it before you break it.",
+        theme: "CSS Foundations + Refactoring UI — Buy It This Week",
+        goal: "CSS is design logic in code. Refactoring UI is the most practical design book for where you are right now. Read them together and each will make the other clearer.",
         sessions: [
           {
-            day: "Friday, June 26", label: "12:00 PM",
+            day: "Friday, June 27", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "CSS Grid — Architecture in the Browser",
+            duration: "90 min",
+            title: "Odin: CSS Foundations — The Cascade, Selectors & Box Model",
             tasks: [
-              { t: "Complete Odin CSS Grid lesson. Read the CSS-Tricks Complete Guide to Grid alongside it — bookmark it permanently.", m: 25 },
-              { t: "Complete all levels of CSS Grid Garden (cssgridgarden.com). Same rule as Flexbox Froggy: understand before advancing.", m: 25 },
-              { t: "Build a 12-column grid layout from scratch with a header, 3-column card row, and footer. No frameworks. Pure CSS Grid.", m: 25 },
+              { t: "Complete 'Intro to CSS' and 'The Cascade' lessons. Write in plain language: what is the cascade? How does CSS decide which rule wins?", m: 35 },
+              { t: "Complete 'Inspecting HTML and CSS' lesson. Open 3 websites you admire in DevTools. Change one color, one font size, one spacing value on each. Observe what breaks.", m: 30 },
+              { t: "Complete 'The Box Model' lesson. Draw the box model on paper — content, padding, border, margin. Every layout decision you ever make lives inside this diagram.", m: 25 },
             ],
-            anchor: "Müller-Brockmann: 'The grid system is an aid, not a guarantee. It permits a number of possible uses and each designer can look for a solution appropriate to his personal style.' Learn the system. Then make it yours.",
+            anchor: "The cascade is a hierarchy — the same logic that governs visual hierarchy in design. The browser resolves CSS conflicts the same way your eye resolves visual conflicts: by specificity, proximity, and weight.",
           },
           {
-            day: "Saturday, June 27", label: "12:00 PM",
+            day: "Saturday, June 28", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Grid Systems — The Invisible Architecture",
+            title: "Refactoring UI — Chapter 1 + Design Instinct",
             tasks: [
-              { t: "Read Grid Systems in Graphic Design: Introduction + Chapter 1. This is dense. Read slowly. Every diagram is a lesson.", m: 30 },
-              { t: "Take 3 screens from your Swipe File. Enable Figma's layout grid (8pt columns). Map the underlying grid of each design — where does it align? Where does it intentionally break, and why?", m: 25 },
-              { t: "Redesign one of those screens on a strict 8pt grid in Figma. Every element snaps. No exceptions. Then: identify one place where breaking the grid would create better tension.", m: 20 },
+              { t: "BUY THIS WEEK: Refactoring UI ($99 · refactoringui.com — Essentials package). If budget is a constraint, prioritize this over any other purchase this phase. It is the most practical design book for your current stage.", m: 0 },
+              { t: "Read Refactoring UI: 'Starting from Scratch' chapter (Chapter 1, ~40 pages). Read with a pen. Circle every principle, not every tip. A principle generalizes. A tip is situational.", m: 35 },
+              { t: "Apply one principle from Chapter 1 to your Figma design from Week 3. Implement the change. Screenshot before and after. Write: what specifically improved and why?", m: 25 },
+              { t: "Post your before/after in Design Buddies #critique. Ask a specific question — not 'what do you think?' but 'does the hierarchy feel clearer in the second version?'", m: 15 },
             ],
-            anchor: "Rand: 'There is no such thing as a boring project. Only boring designers.' The grid is never boring — it is the difference between arbitrary and inevitable. Make your layouts feel inevitable.",
+            anchor: "Rand: 'Don't try to be original. Just try to be good.' Refactoring UI teaches you how to be good. Originality is earned — it comes after you've internalized the rules well enough to break them intentionally.",
           },
           {
-            day: "Monday, June 29", label: "12:00 PM",
+            day: "Monday, June 30", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Figma Grid → CSS Grid — Then Teach It Back",
+            title: "Style Your HTML Page + Teach It Back",
             tasks: [
-              { t: "Take your 8pt Figma layout and build it exactly in HTML/CSS Grid. Measure twice: does the browser match the design? Where does it drift? Fix every drift.", m: 45 },
-              { t: "Watch Kevin Powell 'Are you using the right CSS units?' on YouTube (15 min). Note every unit you didn't fully understand.", m: 15 },
-              { t: "FEYNMAN CLOSE: Write 'CSS Grid differs from Flexbox in that...' and 'The reason grids create visual harmony is...' Specific, clear, no hand-waving.", m: 15 },
+              { t: "Add CSS to your HTML page from Week 2/3. Use what you learned from the box model and cascade. Apply your color palette as CSS custom properties (--color-primary, not #0066FF hardcoded).", m: 40 },
+              { t: "Install Muzli as your Chrome new tab (free extension). Open it. Add one piece to each Swipe File section. You should be doing this daily but this session makes it a practice.", m: 15 },
+              { t: "FEYNMAN CLOSE: Write 'CSS custom properties (variables) are better than hardcoded values because...' and 'The cascade in CSS and visual hierarchy in design are related because...' Post in community.", m: 20 },
             ],
-            anchor: "Knuth on precision: 'Beware of bugs in the above code; I have only proved it correct, not tried it.' Every pixel in your layout should be provable — you should know why it's there.",
+            anchor: "Maeda: 'Simplicity is about subtracting the obvious and adding the meaningful.' CSS custom properties are that discipline in code — one source of truth. One decision, applied everywhere.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Continue Odin at your own pace on non-session days — even 20 min moves the needle. The Foundations curriculum has 9 sections. Treat each section as a milestone, not each lesson.",
       },
       {
         week: 5,
-        theme: "JavaScript — Behavior as Design",
-        goal: "JavaScript is not an afterthought. It is the design layer that governs how things feel in time.",
+        theme: "CSS Block & Inline + Composition Study",
+        goal: "Understanding how elements flow in CSS is the foundation of every layout you will build. Pair it with studying how masters compose images and spaces.",
         sessions: [
           {
-            day: "Friday, July 3", label: "12:00 PM",
+            day: "Friday, July 4", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "JS Basics — Logic as a Design Tool",
+            duration: "90 min",
+            title: "Odin: CSS — Block, Inline & the Odin Recipes Project",
             tasks: [
-              { t: "Complete Odin JavaScript Basics lesson. Variables, strings, numbers. After each concept: open VS Code terminal and test it. Don't just read — run it.", m: 30 },
-              { t: "Write a script that changes a page element's color, size, and text on click. Three separate behaviors, wired up yourself. No tutorials.", m: 30 },
-              { t: "Read: 'JavaScript is not Java' section on MDN (search 'MDN JavaScript first steps'). Understand what JS actually is before going deeper.", m: 15 },
+              { t: "Complete 'Block and Inline' lesson. Write: what is the difference between a block and an inline element? Give 3 examples of each from memory — then verify.", m: 30 },
+              { t: "Start the Odin Recipes Project (HTML only, no CSS). This is your first real project. Take it seriously — semantic HTML, proper structure, meaningful commit messages.", m: 50 },
+              { t: "Push the project to GitHub. This is your first public code. It does not have to be perfect. It has to exist.", m: 10 },
             ],
-            anchor: "Maeda: 'The best design is the one that doesn't need a manual.' JavaScript is how you build that experience — one that responds, adapts, and communicates without words.",
+            anchor: "Block vs. inline is the browser's version of the designer's choice between structure and flow. Every layout decision maps back to this distinction. Own it completely.",
           },
           {
-            day: "Saturday, July 4", label: "12:00 PM",
+            day: "Saturday, July 5", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Microinteractions — The Details that Define Excellence",
+            title: "Composition Study — Photography, Editorial, Space",
             tasks: [
-              { t: "Read Dan Saffer's Microinteractions intro (free first chapter online). Catalog the four parts of a microinteraction: trigger, rules, feedback, loops & modes.", m: 25 },
-              { t: "Find 5 microinteractions in products you use daily — a button press, a toggle, a notification, a loading state, a form validation. For each: write what it communicates and whether it does so clearly or poorly.", m: 25 },
-              { t: "Prototype one microinteraction in Figma using Smart Animate. Make it feel right — not just correct. Adjust the easing until it has the right 'weight'. Rams: details are not details, they make the product.", m: 25 },
+              { t: "Choose one photographer to study this week: Irving Penn, Saul Leiter, Gordon Parks, or Viviane Sassen. Find 10 of their images online (free). For each: identify the single compositional decision that makes it work — leading line, negative space, depth of field, color relationship, subject placement.", m: 35 },
+              { t: "Find the equivalent compositional intelligence in 2 editorial spreads and 2 interior photographs. Where does the same logic appear across different media?", m: 25 },
+              { t: "Add the best 5 discoveries to your Swipe File (Spatial/World section). Post one to Design Buddies with your compositional analysis. See what others add.", m: 15 },
             ],
-            anchor: "Rams: 'Details are not details. They make the design.' The difference between a good product and an exceptional one is almost entirely in the microinteractions. This is where taste lives.",
+            anchor: "Irving Penn: 'A photograph is not an accident — it is a concept.' Every layout decision should be a concept, not an accident. Study photographers to develop the habit of intentional composition.",
           },
           {
             day: "Monday, July 7", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Animate with CSS Transitions — Then Teach It Back",
+            title: "Apply Composition to Layout + Teach It Back",
             tasks: [
-              { t: "Build the microinteraction you prototyped using CSS transitions + a JS class toggle. No libraries. Understand exactly what is animating, why, and at what speed. Test it obsessively.", m: 40 },
-              { t: "Watch Flux Academy 'How to develop your design taste' on YouTube. Take notes — not on the content, on what you disagree with.", m: 20 },
-              { t: "FEYNMAN CLOSE: Write 'A CSS transition works by...' and 'Microinteractions serve the user by...' Then: 'The difference between animation that informs and animation that decorates is...'", m: 15 },
+              { t: "Take one photograph from your composition study. Translate its spatial logic into a Figma layout — same proportional relationships, same balance of density and space, same light/dark ratio. Screenshot both side by side.", m: 35 },
+              { t: "Read one post in r/learndesign or r/web_design that resonates. Write a thoughtful reply. This is how community works — contribution compounds.", m: 15 },
+              { t: "FEYNMAN CLOSE: Write 'Compositional intelligence means...' using one photographic example and one layout example. Where are they identical? Where do they diverge?", m: 25 },
             ],
-            anchor: "Feynman: 'If you can't explain it simply, you don't understand it well enough.' Every animation you build should have a one-sentence rationale. If you can't state it, reconsider whether it should exist.",
+            anchor: "Feynman: 'What I cannot create, I do not understand.' You cannot yet build a beautiful layout from scratch — but you can trace the logic of one that exists. That tracing is your current level of understanding. It is enough for now.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Continue Odin Recipes Project on non-session days. The project is the most important part of any Odin section — do not skip it to rush ahead.",
       },
       {
         week: 6,
-        theme: "First Real Ship — The Landing Page",
-        goal: "Shipping is not the end of learning. It is the beginning of a different kind of learning. Put real work into the world.",
+        theme: "CSS Flexbox + Grid Systems — The Spatial Logic of Layout",
+        goal: "Flexbox is how the browser thinks about space. Grid systems are how designers think about space. They are the same concept in different languages.",
         sessions: [
           {
-            day: "Friday, July 10", label: "12:00 PM",
-            track: "Design",
-            duration: "75 min",
-            title: "Design with Conviction — No Safe Choices",
+            day: "Friday, July 11", label: "12:00 PM",
+            track: "Code",
+            duration: "90 min",
+            title: "Odin: CSS Flexbox — Introduction & Growing/Shrinking",
             tasks: [
-              { t: "Choose your concept: redesign a brand you interact with daily, or create an imaginary product you wish existed. This must be something you care about — mediocre commitment produces mediocre work.", m: 10 },
-              { t: "Sketch 3 layout directions — not wireframes, directions. Each should have a different spatial logic. Pick the one with the most conviction, not the most comfort.", m: 30 },
-              { t: "Build the full high-fidelity Figma design. Apply everything from Weeks 1–5: hierarchy, color system, type scale, 8pt grid. Every decision should be defensible. Ask of each element: does this earn its space?", m: 35 },
+              { t: "Complete 'Introduction to Flexbox' and 'Growing and Shrinking' lessons. For every property: state in plain language what it controls and why that matters.", m: 40 },
+              { t: "Start Flexbox Froggy (flexboxfroggy.com — free). Complete levels 1–12. Understand the answer before advancing. This is not a race.", m: 30 },
+              { t: "Apply Flexbox to your Recipes Project: make the recipe list display in a row that wraps. Inspect it in DevTools to understand how the browser calculated the spacing.", m: 20 },
             ],
-            anchor: "Rand: 'Don't try to be original. Just try to be good.' Good means clear, purposeful, and honest. Originality follows when those three things are truly in place.",
+            anchor: "Flexbox thinks in one dimension at a time — row or column. That constraint produces clarity. Every design decision that produces clarity deserves to be understood deeply.",
           },
           {
-            day: "Saturday, July 11", label: "12:00 PM",
-            track: "Code",
+            day: "Saturday, July 12", label: "12:00 PM",
+            track: "Design",
             duration: "75 min",
-            title: "Build: Semantic Structure First",
+            title: "Grid Systems — Read Müller-Brockmann, See Grids Everywhere",
             tasks: [
-              { t: "Create project in VS Code: index.html, style.css, assets/. Semantic HTML first — every element chosen for meaning, not convenience. No div soup.", m: 15 },
-              { t: "Build the full HTML structure. No styling yet. When done: read the page with CSS disabled (in DevTools, uncheck all styles). Does it still communicate? It should.", m: 35 },
-              { t: "Apply base CSS: custom properties for colors, type scale, spacing. Name your variables like a system, not a shorthand. --color-primary, not --blue.", m: 25 },
+              { t: "Read Grid Systems in Graphic Design: Introduction + Chapter 1 (you bought this). Read every diagram as a spatial decision, not a graphic design rule.", m: 30 },
+              { t: "Find the grid in 3 physical or editorial objects: a magazine spread, an interior photograph, a film still. Sketch the underlying column structure on paper or in Figma. Where are the margins? Where are the gutters? What does the grid enable?", m: 25 },
+              { t: "Read Refactoring UI: 'Layout and Spacing' section. Compare its digital spacing principles to Müller-Brockmann's print spacing principles. Write: what is the same? What is different? Why?", m: 20 },
             ],
-            anchor: "Accessibility is not a feature. It is the baseline of professional craft. A page that communicates without CSS is a page built with intention.",
+            anchor: "Müller-Brockmann: 'The grid system is an aid, not a guarantee.' Learn the system before you decide when to break it. Breaking a grid intentionally is a statement. Breaking it accidentally is a mistake.",
           },
           {
             day: "Monday, July 14", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Polish, Push, Document — Then Teach It Back",
+            title: "Flexbox Layout + Sketch a Grid — Then Teach It Back",
             tasks: [
-              { t: "Add hover states, focus states, transitions. Build mobile-first: start at 375px, work up. Every breakpoint should feel designed, not just functional.", m: 30 },
-              { t: "Push to GitHub. Open your Figma design and your built page side by side. Screenshot both. Note every gap — not to feel bad, but to understand what you'll close next time.", m: 20 },
-              { t: "FEYNMAN CLOSE — Case Study: Write 200 words: what you designed, the 3 most important decisions you made, what you'd do differently, and what you learned that surprised you. This is your first portfolio entry.", m: 25 },
+              { t: "Complete Flexbox Froggy levels 13–24. Then build a simple 3-card layout using only Flexbox — no frameworks.", m: 35 },
+              { t: "Sketch a grid for your Figma design from Week 3: columns, gutters, margins on paper first. Then apply it in Figma (enable layout grid). What does imposing a grid reveal about your current layout?", m: 20 },
+              { t: "FEYNMAN CLOSE: Write 'CSS Flexbox controls layout by...' and 'Grid systems in design work because...' Then: where are these two principles the same concept?", m: 20 },
             ],
-            anchor: "Vignelli: 'The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design.' Shipping something considered and deliberate is an act of defiance. Do it again and again.",
+            anchor: "Knuth: every layout should be provable. You should be able to state why every element occupies the space it does. The grid makes this possible — it gives you a reason for every decision.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Odin Flexbox axes and alignment lessons on off-days. These are short — do them between other things if needed.",
       },
       {
         week: 7,
-        theme: "Responsive Design — Every Screen is a Design Decision",
-        goal: "A layout that breaks at mobile is an unfinished design. Responsive thinking is not a feature — it is the work.",
+        theme: "Flexbox Alignment + Your First Real Design — Start It This Week",
+        goal: "Master Flexbox alignment. Design your first real project this week — not an exercise, an actual designed thing with a point of view.",
         sessions: [
           {
-            day: "Friday, July 17", label: "12:00 PM",
+            day: "Friday, July 18", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "Responsive CSS — Mobile First, Always",
+            duration: "90 min",
+            title: "Odin: Flexbox — Axes, Alignment & the Landing Page Project",
             tasks: [
-              { t: "Complete Odin responsive design lesson. Internalize mobile-first: you write for the smallest screen first, then expand. Not the reverse.", m: 25 },
-              { t: "Make your Week 6 landing page fully responsive. Use min-width media queries only — that is mobile-first. Test at 375px, 768px, 1280px.", m: 35 },
-              { t: "Open Chrome DevTools → device toolbar. Test every breakpoint. For each one: does it feel designed or just not-broken? There is a difference.", m: 15 },
+              { t: "Complete 'Axes' and 'Alignment' lessons. For alignment properties: draw what each one does before reading the explanation. Prediction forces understanding.", m: 30 },
+              { t: "Start the Odin Landing Page Project. This is a real project — design it before you build it. Sketch it on paper first.", m: 50 },
+              { t: "Push your first commit. Commit message: 'Initial structure — header and hero section.'", m: 10 },
             ],
-            anchor: "Constraints are not limitations — they are editors. Mobile forces clarity. If a layout works at 375px, it works everywhere.",
+            anchor: "Alignment is a design decision before it is a CSS property. Every alignment choice communicates relationship — this belongs with that. Learn to see alignment as meaning before you implement it as code.",
           },
           {
-            day: "Saturday, July 18", label: "12:00 PM",
+            day: "Saturday, July 19", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Designing for Constraint — Small Screen, Full Intention",
+            title: "Design Your First Real Project — Find Your Reference Outside the Web",
             tasks: [
-              { t: "Read Apple HIG: Adaptivity and Layout section (free at developer.apple.com/design/human-interface-guidelines). Note every decision Apple made about touch targets, spacing, hierarchy at small scale.", m: 25 },
-              { t: "Create a mobile frame (375px) version of your landing page in Figma. Not a shrunken desktop — a redesign. Ask: what does this screen need to do, and what must be removed to let it do that?", m: 35 },
-              { t: "Find 3 sites on Awwwards.com with exceptional mobile experiences. Write: what one decision in each made the small screen feel designed rather than compromised?", m: 15 },
+              { t: "Choose your concept for a personal landing page or a concept you care about. Before opening Figma: find 3 references OUTSIDE the web — a magazine spread, an interior photograph, a film still. The feeling you want the page to have must come from somewhere real.", m: 15 },
+              { t: "Sketch 3 layout directions on paper. Each should feel like it comes from your physical reference — not like a generic website. 10 minutes per sketch.", m: 30 },
+              { t: "Build the high-fidelity Figma design. Apply your grid, color palette, and type system from previous weeks. Every decision traceable back to your reference.", m: 30 },
             ],
-            anchor: "Rams: 'Less, but better.' The mobile screen enforces this rule. You cannot hide bad decisions behind screen real estate. Every element must justify itself.",
+            anchor: "The best set designers build rooms that feel like they could exist because every object was chosen with specificity. That specificity — knowing why this color, this typeface, this spacing — is what separates work with a point of view from work that merely functions.",
           },
           {
             day: "Monday, July 21", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Swipe File Deep Cut — Then Teach It Back",
+            title: "Connect Figma Design to Landing Page Code — Then Teach It Back",
             tasks: [
-              { t: "Add 10 pieces to your Swipe File — this week's focus: mobile-first design. For each, note the one decision that makes it exceptional.", m: 20 },
-              { t: "Pick one piece from your swipe file and rebuild a section of it in HTML/CSS as a personal exercise. Not to copy — to understand how it was made.", m: 35 },
-              { t: "FEYNMAN CLOSE: Write 'Mobile-first CSS means...' and 'The reason responsive design requires a redesign, not a resize, is...' Then: what is one thing you now see in mobile design that you didn't see 3 weeks ago?", m: 20 },
+              { t: "Continue building the Odin Landing Page. Use what you designed in Figma as your reference — not the Odin example. Your design, your code.", m: 40 },
+              { t: "Post your Figma design in Design Buddies #critique or the Odin Discord. Ask: 'Does the visual hierarchy lead the eye correctly?' Read every response.", m: 15 },
+              { t: "FEYNMAN CLOSE: Write 'Flexbox alignment communicates...' and 'The reason I chose these specific references for my landing page is...' The second question is taste articulated. Practice it.", m: 20 },
             ],
-            anchor: "Feynman kept a notebook of things he didn't understand — not to feel inadequate, but to hunt them down. Your Feynman Close is that notebook. The gaps you find are the next thing to master.",
+            anchor: "Vignelli: 'The life of a designer is a life of fight against the ugliness.' Shipping a landing page that has a genuine point of view — however imperfect — is an act of defiance against generic design. Finish it.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Work on the Odin Landing Page project on non-session days. Projects are where Odin actually teaches — the lessons are preparation, the projects are the education.",
       },
       {
         week: 8,
-        theme: "JavaScript DOM & Animation — Making Things Feel Alive",
-        goal: "The DOM is your design canvas. JS is how you make it respond. This is where static design ends and experience design begins.",
+        theme: "CSS Grid + Editorial & Cinematic Taste",
+        goal: "CSS Grid gives you two-dimensional control of space. Editorial design and film give you the taste to use that control with intention.",
         sessions: [
           {
-            day: "Friday, July 24", label: "12:00 PM",
+            day: "Friday, July 25", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "DOM Manipulation — Design That Listens",
+            duration: "90 min",
+            title: "Odin: CSS Grid — Introduction, Sizing & Positioning",
             tasks: [
-              { t: "Complete Odin DOM lesson. Understand the tree — not just how to traverse it, but why it's structured the way it is.", m: 25 },
-              { t: "Build an accordion component from scratch: click to expand, click again to collapse, smooth CSS transition. No libraries. Understand every line.", m: 35 },
-              { t: "Read: 'The Illusion of Life' Disney animation principles (search 'Disney 12 principles of animation'). Apply 3 of them mentally to your accordion.", m: 15 },
+              { t: "Complete 'Introduction to Grid' lesson. Before reading: write down your mental model of how Grid differs from Flexbox. After reading: write how that model changed.", m: 30 },
+              { t: "Complete CSS Grid sizing and placement lessons. For each property: state what problem it solves.", m: 30 },
+              { t: "Complete CSS Grid Garden (cssgridgarden.com) — all levels. Understand before advancing.", m: 30 },
             ],
-            anchor: "Maeda: 'Technology-inspired design is at the intersection of humanity and technology.' The DOM is that intersection. When JS responds to a human action, you are designing a conversation.",
+            anchor: "Grid gives you control of both axes simultaneously. That is the power a magazine art director has over a spread. Learn it at this level of depth — it is one of the most important tools you will use.",
           },
           {
-            day: "Saturday, July 25", label: "12:00 PM",
+            day: "Saturday, July 26", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Motion as Meaning — Animation with a Rationale",
+            title: "Editorial Taste + Cinematic Composition",
             tasks: [
-              { t: "Watch 'Designing with Motion' — Google Material Design YouTube (25 min). For each principle named: find a real example in a product you use.", m: 30 },
-              { t: "In Figma: prototype 3 transition variants for a modal: fade, slide-up, scale. For each: write the UX rationale — what does this motion communicate about the relationship between the two states?", m: 30 },
-              { t: "Find 2 sites on Awwwards where animation is used exceptionally. Write: what makes each animation purposeful, not decorative?", m: 15 },
+              { t: "Study Art of the Title (artofthetitle.com — free). Find 2 film title sequences that move you. For each: write what the typography communicates about the world you're about to enter. How does the motion reinforce the type?", m: 30 },
+              { t: "Find 3 magazine spreads (photograph physical ones or find editorial work online from Kinfolk, T Magazine, or Monocle). Map the grid of each spread on paper. Where are the columns? Where does the image break the grid intentionally?", m: 25 },
+              { t: "Add the best 3 finds to your Swipe File. Post one editorial analysis in Design Buddies or Reddit — not 'I like this' but 'here's why this works.'", m: 20 },
             ],
-            anchor: "Every animation should answer this question: 'What does this motion teach the user about how this interface works?' If it teaches nothing, it should not exist.",
+            anchor: "Brodovitch at Harper's Bazaar treated every spread like a stage — with blocking, tension, rhythm, and rest. A magazine spread and a CSS Grid layout are the same choreographic challenge. Study the masters of one to get better at the other.",
           },
           {
             day: "Monday, July 28", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Animate Your Page — Then Teach It Back",
+            title: "Apply Grid to Your Design + Teach It Back",
             tasks: [
-              { t: "Add entrance animations to your landing page: hero text, CTA, and one below-fold section using CSS @keyframes + JS scroll trigger (Intersection Observer). No libraries yet — understand the native API.", m: 40 },
-              { t: "Audit your animations: does each one take under 350ms? Does each one have a rationale you can state in one sentence? Remove any that fail this test.", m: 20 },
-              { t: "FEYNMAN CLOSE: Write 'The Intersection Observer API works by...' and 'The difference between animation that earns its existence and animation that doesn't is...'", m: 15 },
+              { t: "Revisit your Week 7 Figma design. Apply a proper CSS Grid structure to it — column count, gutters, alignment to grid. Then rebuild the layout section in code using CSS Grid.", m: 40 },
+              { t: "Watch one short episode of Abstract: The Art of Design (Netflix) — any episode. Write: what did this designer's process reveal about how they make decisions?", m: 20 },
+              { t: "FEYNMAN CLOSE: Write 'CSS Grid differs from Flexbox in that...' and 'The reason a grid makes breaking it more powerful is...'", m: 15 },
             ],
-            anchor: "Knuth: 'Premature optimization is the root of all evil.' Premature animation is the root of all noise. Build with restraint. Add motion only where it clarifies.",
+            anchor: "Rand: 'There is no such thing as a boring project. Only boring designers.' Every layout challenge — a grid exercise, a magazine spread, a room — is an opportunity to make a decision that matters.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Read one post on Siteinspire.com or Awwwards.com. Practice identifying: what grid system is the designer using? Where do they break it?",
       },
       {
         week: 9,
-        theme: "Figma Mastery — Thinking in Components",
-        goal: "Figma fluency is thinking speed. Slow tools slow ideas. Components are the vocabulary of design systems.",
+        theme: "JavaScript Begins + Figma Mastery",
+        goal: "JavaScript is the hardest section of Odin Foundations — it is also where most people quit. Don't quit. Run it alongside Figma mastery so the design track keeps feeding your motivation.",
         sessions: [
           {
-            day: "Friday, July 31", label: "12:00 PM",
-            track: "Design",
-            duration: "75 min",
-            title: "Components — The Atoms of Excellence",
-            tasks: [
-              { t: "Complete Figma's official Components tutorial (figma.com/resources/learn-design). After each concept: immediately build it yourself. Watching is not learning.", m: 30 },
-              { t: "Build a button component with 4 states: default, hover, focus, disabled. Every state must be intentional — not just visible. Why does each state look the way it does?", m: 25 },
-              { t: "Study Linear.app's button system in their public Figma community file. Reverse-engineer the decisions. Write: what would you do differently and why?", m: 20 },
-            ],
-            anchor: "Vignelli: 'Styles come and go. Good design is a language, not a style.' Components are that language. The more precise your vocabulary, the faster and clearer you can speak.",
-          },
-          {
-            day: "Saturday, August 1", label: "12:00 PM",
-            track: "Design",
-            duration: "75 min",
-            title: "Auto Layout — Figma's Design System Engine",
-            tasks: [
-              { t: "Watch Figma's official 'Auto Layout' tutorial on YouTube. Then close the video and rebuild what you watched from memory.", m: 25 },
-              { t: "Rebuild your landing page sections using Auto Layout components. Everything responsive within Figma itself. No fixed frames.", m: 35 },
-              { t: "Write: where did Auto Layout break your intuition? What assumption did you have to unlearn? Unlearning is the most underrated skill in design.", m: 15 },
-            ],
-            anchor: "Auto Layout in Figma mirrors Flexbox in CSS. Master one and the other becomes intuitive. This is not coincidence — it is the same spatial logic, different medium.",
-          },
-          {
-            day: "Monday, August 4", label: "12:00 PM",
+            day: "Friday, Aug 1", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "Odin: JS Functions + Arrays — Then Teach It Back",
+            duration: "90 min",
+            title: "Odin: JavaScript Fundamentals Part 1 — Variables & Data Types",
             tasks: [
-              { t: "Complete Odin Functions lesson. Write each function example in VS Code, run it, modify it, break it deliberately. Passive reading produces passive understanding.", m: 30 },
-              { t: "Complete Odin Arrays lesson. Build: a dynamic list where you can add, remove, and reorder items. Style it well — ugly code practice is a bad habit.", m: 30 },
-              { t: "FEYNMAN CLOSE: Write 'A function in JavaScript is...' and 'Components in design and functions in code are similar because...' The connection between these two concepts is the foundation of component-driven development.", m: 15 },
+              { t: "Complete 'JavaScript Fundamentals Part 1.' For every concept: type it in your VS Code terminal, run it, change it, break it deliberately. Reading alone does not build understanding in JS.", m: 50 },
+              { t: "Complete the exercises at the end of the lesson. Do not move on until every exercise works.", m: 30 },
+              { t: "Write in plain language: what is a variable? What is a data type? Why does the distinction matter? If you can't answer without looking, you're not done.", m: 10 },
             ],
-            anchor: "Knuth: 'Computer programming is an art, because it applies accumulated knowledge to the world, because it requires skill and ingenuity.' The same is true of design. Both demand precision of thought.",
+            anchor: "Knuth: 'Beware of bugs in the above code; I have only proved it correct, not tried it.' Run everything. Trust nothing you haven't executed.",
+          },
+          {
+            day: "Saturday, Aug 2", label: "12:00 PM",
+            track: "Design",
+            duration: "75 min",
+            title: "Figma Components — Building a Design Vocabulary",
+            tasks: [
+              { t: "Complete Figma's official Components tutorial (free on figma.com/resources). After each concept: build it immediately. Watching without building is not learning.", m: 30 },
+              { t: "Build a button component with 4 states: default, hover, focus, disabled. Each state must be intentional — not just visible. Why does each state look the way it does?", m: 25 },
+              { t: "Study one published Figma community file — search 'design system' in Figma Community (free). Find one decision in it that you don't understand. Post the question in Design Buddies.", m: 20 },
+            ],
+            anchor: "Vignelli: 'Styles come and go. Good design is a language, not a style.' Components are that language. The more precise your vocabulary, the faster and clearer you think.",
+          },
+          {
+            day: "Monday, Aug 4", label: "12:00 PM",
+            track: "Both",
+            duration: "75 min",
+            title: "JS + Figma Connection — Then Teach It Back",
+            tasks: [
+              { t: "Continue Odin JS Fundamentals Part 2 — operators and comparisons. Write a function that takes two numbers and returns the larger one. No tutorial. Figure it out.", m: 40 },
+              { t: "In Figma: build one more component from your landing page design — a card or a navigation item. Apply your color system and type scale.", m: 15 },
+              { t: "FEYNMAN CLOSE: Write 'A variable in JavaScript is...' and 'A component in Figma is...' Then: 'These two concepts are related because...' The connection is real — find it.", m: 20 },
+            ],
+            anchor: "Maeda: 'Technology-inspired design is at the intersection of humanity and technology.' JavaScript and Figma components are both tools for making human experience more considered. One executes. One proposes. You need both.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: JS is hard. On off-days, do 20 minutes of Odin JS lessons or exercises. Consistency beats intensity here. Missing a week of JS and coming back cold is worse than slow daily progress.",
       },
       {
         week: 10,
-        theme: "Design Psychology — Why Humans Do What They Do",
-        goal: "Exceptional designers are applied psychologists. You cannot design for humans without understanding how humans perceive, decide, and err.",
+        theme: "JS Problem Solving + Design Psychology",
+        goal: "Problem solving is the core of JavaScript. Understanding human psychology is the core of design. Learn both this week — they will inform each other more than you expect.",
         sessions: [
           {
-            day: "Friday, August 7", label: "12:00 PM",
+            day: "Friday, Aug 8", label: "12:00 PM",
+            track: "Code",
+            duration: "90 min",
+            title: "Odin: JavaScript — Developer Tools, Errors & Problem Solving",
+            tasks: [
+              { t: "Complete 'JavaScript Developer Tools' lesson. Your browser's DevTools is your debugging environment for life. Learn it now at depth.", m: 25 },
+              { t: "Complete 'Understanding Errors' lesson. Write: what are the 3 most common JS error types and what does each tell you about what went wrong?", m: 25 },
+              { t: "Complete 'Problem Solving' lesson. Apply the problem solving framework to one real bug you've hit in your own code — not a tutorial bug.", m: 40 },
+            ],
+            anchor: "Feynman: 'The first step to knowing something is to recognize that you don't know it.' Errors are not failures — they are precise statements about what you don't understand yet.",
+          },
+          {
+            day: "Saturday, Aug 9", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "The Design of Everyday Things — First Principles",
+            title: "Norman's Principles Applied — Digital and Physical",
             tasks: [
-              { t: "Read The Design of Everyday Things: Chapters 1–2. Read with skepticism — challenge every claim Norman makes against what you observe in the real world.", m: 35 },
-              { t: "Find 3 things in your home, phone, or laptop that violate Norman's principles (bad affordance, missing feedback, wrong mapping). Photograph or screenshot them.", m: 20 },
-              { t: "For each: sketch a redesign. Not beautiful — correct. Fix the principle violation specifically.", m: 20 },
+              { t: "Pull out The Design of Everyday Things and reread Chapter 1 with fresh eyes — you now have 9 weeks of design practice behind you. Write: what do you understand now that you didn't when you first read it?", m: 25 },
+              { t: "Find 3 things near you — physical objects — that violate Norman's principles. Photograph them. For each: name the specific principle violated and sketch a redesign that fixes it.", m: 30 },
+              { t: "Find the digital equivalent of each physical failure — a confusing form, a hidden action, a missing feedback state. Write: same principle, different medium.", m: 20 },
             ],
-            anchor: "Norman: 'Good design is actually a lot harder to notice than poor design, in part because good designs fit our needs so well that the design is invisible.' Excellence is invisible. Strive for invisible.",
+            anchor: "Norman: 'Good design fits our needs so well that the design is invisible.' This is equally true for a checkout flow and a corridor in a museum. The goal — make the experience feel inevitable — is the same in every medium.",
           },
           {
-            day: "Saturday, August 8", label: "12:00 PM",
-            track: "Code",
-            duration: "75 min",
-            title: "Odin: JS Objects — Modeling the World",
-            tasks: [
-              { t: "Complete Odin Objects lesson. Build an object that models a real UI component: a card's complete data structure — title, description, image, CTA, state.", m: 30 },
-              { t: "Build a small JS project: a to-do list. But make it well-designed. Every state (empty, one item, many items, completed) should look intentional.", m: 35 },
-              { t: "Read: 'Object-Oriented Design' intro on MDN. How does OOP mirror the way design systems think about components?", m: 10 },
-            ],
-            anchor: "Objects model reality. Design components model reality. Both are abstractions that let you work faster by naming things precisely. Naming is power.",
-          },
-          {
-            day: "Monday, August 11", label: "12:00 PM",
+            day: "Monday, Aug 11", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
             title: "Apply Psychology to Your Own Work — Then Teach It Back",
             tasks: [
-              { t: "Audit your Week 6 landing page through Norman's lens: affordances, signifiers, feedback, mapping, constraints. Find every violation. Fix 3 of them.", m: 35 },
-              { t: "Add 5 pieces to your Swipe File focused on UX clarity over visual aesthetics. Write: what design psychology principle does each one apply well?", m: 20 },
-              { t: "FEYNMAN CLOSE: Write 'An affordance is...' and 'The reason feedback matters in interface design is...' Then: what is one thing Norman taught you that you will never un-see in interfaces?", m: 20 },
+              { t: "Audit your Figma landing page design with Norman's lens: affordances, signifiers, feedback, mapping. Find 3 violations. Fix them. Screenshot before and after.", m: 35 },
+              { t: "Audit the Odin Landing Page code: are the HTML semantics as clear as they could be? Does the code communicate the design intention?", m: 20 },
+              { t: "FEYNMAN CLOSE: Write 'An affordance is...' using one digital and one physical example. Then: 'The principle connecting good software design and good physical design is...'", m: 20 },
             ],
-            anchor: "Feynman: 'The first principle is that you must not fool yourself — and you are the easiest person to fool.' Review your own work the way Norman reviews a bad door handle. Without ego.",
+            anchor: "Rams on his own work: 'You cannot understand good design if you do not understand people.' People are the constant. Every medium is just a different way of designing for them.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Odin JS Fundamentals Part 3 (clean code and functions) on off-days. This section is where JS starts to feel like a real language. Don't rush it.",
       },
       {
         week: 11,
-        theme: "Brand Systems & Visual Identity",
-        goal: "Products are remembered through their visual system, not individual screens. A system is a promise made consistently.",
+        theme: "JS Functions + Building a Visual World",
+        goal: "Functions are the building blocks of JavaScript logic. A visual world is the building block of everything you will ever design. Develop both this week with the same rigor.",
         sessions: [
           {
-            day: "Friday, August 14", label: "12:00 PM",
+            day: "Friday, Aug 15", label: "12:00 PM",
+            track: "Code",
+            duration: "90 min",
+            title: "Odin: JS Fundamentals — Clean Code & Functions",
+            tasks: [
+              { t: "Complete 'Clean Code' lesson. Refactor one piece of your own code using every principle named. Renaming a variable to something precise is a design decision.", m: 30 },
+              { t: "Complete 'JavaScript Fundamentals Part 3' — functions. Write 5 functions from scratch that solve small, real problems. No tutorials. Your own problems.", m: 50 },
+              { t: "Post your best function in the Odin Discord with a comment explaining what it does and why you wrote it that way. Ask for one suggestion.", m: 10 },
+            ],
+            anchor: "Knuth: 'Let us concentrate on explaining to humans what we want the computer to do.' A function is a named explanation. A well-named function reads like a sentence about intent.",
+          },
+          {
+            day: "Saturday, Aug 16", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Brand Systems — The Language of a Product",
+            title: "Building a Visual World — Study the Practitioners",
             tasks: [
-              { t: "Study one brand system in depth — choose Stripe, Linear, or Vercel. Write: their typeface and why, their color rationale, their spacing philosophy, their illustration/icon approach, and the emotion the system creates as a whole.", m: 35 },
-              { t: "Read Thinking with Type: Part 2 (Text). Focus on the text section — how typographic decisions create reading rhythms.", m: 25 },
-              { t: "Add 5 brand-forward pieces to your Swipe File. Tag each: what is the single strongest element of this brand system?", m: 15 },
+              { t: "Choose one practitioner who creates a coherent visual world across media: Wes Anderson (film, sets, graphics), Aesop (retail, web, packaging, editorial), or Kinfolk magazine (photography, spatial, editorial). Write one page: what are the 5 decisions that make their world coherent? What are the atoms of their visual language?", m: 40 },
+              { t: "Apply this lens to your own Figma work: what are the 3 core decisions that define your developing visual world? Type choice, color palette, spatial rhythm? Write them explicitly.", m: 20 },
+              { t: "Add 5 pieces to your Swipe File that represent coherent visual worlds — not just beautiful individual pieces. There is a difference.", m: 15 },
             ],
-            anchor: "Rand: 'A logo is a flag, a signature, an escutcheon, a street sign. A logo does not sell (directly), it identifies.' A brand system is the context that makes the logo meaningful. Build systems, not logos.",
+            anchor: "Wes Anderson's films are production design, costume, typography, and color working as one intelligence. That is the standard for any cross-medium designer. Every touchpoint speaks the same language.",
           },
           {
-            day: "Saturday, August 15", label: "12:00 PM",
-            track: "Code",
-            duration: "75 min",
-            title: "Odin: Clean Code — The Craft of Readability",
-            tasks: [
-              { t: "Complete Odin Clean Code lesson. Refactor your Week 6 HTML/CSS project — rename every variable, class, and ID to be precise and meaningful. No abbreviations, no generic names.", m: 30 },
-              { t: "Start the Odin Library or Tic-Tac-Toe project. Choose the one that excites you more — excitement produces better work.", m: 35 },
-              { t: "Read: 'Naming Things in Code' — search on CSS-Tricks. Good names are a design decision.", m: 10 },
-            ],
-            anchor: "Knuth on code: 'Let us change our traditional attitude to the construction of programs: instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to humans what we want the computer to do.'",
-          },
-          {
-            day: "Monday, August 18", label: "12:00 PM",
+            day: "Monday, Aug 18", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Build a Mini Brand System — Then Teach It Back",
+            title: "Functions + Brand Tokens — Then Teach It Back",
             tasks: [
-              { t: "In Figma: define a complete mini brand system for an imaginary product — 3-color palette, 2-font system, spacing scale, 3 core component styles. Every decision must have a rationale.", m: 35 },
-              { t: "Export your brand tokens as CSS custom properties. Apply them to a new HTML file. Prove that your design system works in code, not just in Figma.", m: 25 },
-              { t: "FEYNMAN CLOSE: Write 'Design tokens bridge design and code by...' and 'A brand system differs from a mood board because...' Then: what is one brand decision you made that you can fully defend?", m: 15 },
+              { t: "In Figma: define your core design tokens — 3-color palette, 2-font system, spacing scale. These are the atoms of your visual world. Export them as CSS custom properties.", m: 30 },
+              { t: "Apply your tokens to your landing page CSS. Every color and spacing value should come from a variable. Prove the system works.", m: 25 },
+              { t: "FEYNMAN CLOSE: Write 'A JavaScript function is...' and 'A design token is...' Then: 'These two concepts are expressions of the same idea, which is...' Post in community. The answer will surprise people.", m: 20 },
             ],
-            anchor: "Vignelli: 'The life of a designer is a life of fight. Fight against the ugliness. Just like a doctor fights against disease. For us, the visual disease is what we have around, and what we try to do is cure it somehow.'",
+            anchor: "Vignelli: 'The life of a designer is a life of fight against the ugliness.' Your design tokens are your position statement. They say: I have thought about this, and these are my answers.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Begin the Odin Rock Paper Scissors project on off-days. This is your first real JavaScript project. Plan it on paper before writing a line of code.",
       },
       {
         week: 12,
-        theme: "Phase 1 Retrospective — Consolidate, Articulate, Advance",
-        goal: "Reflection is not optional. Exceptional practitioners review their own work with more rigor than anyone else will.",
+        theme: "Phase 1 Retrospective — What Have You Built? Who Are You Becoming?",
+        goal: "Reflection is not optional. The designers and developers who grow fastest are the ones who review their own work with more rigor than anyone else will.",
         sessions: [
           {
-            day: "Friday, August 21", label: "12:00 PM",
+            day: "Friday, Aug 22", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "Code Retrospective — Review Everything You Built",
+            duration: "90 min",
+            title: "Odin: Continue JS Projects — Review What You've Built",
             tasks: [
-              { t: "Open every project from Weeks 1–11 in VS Code. Review each one as if seeing it for the first time. Write: what would you refactor, and what holds up? Be specific.", m: 30 },
-              { t: "Finish and push any incomplete Odin projects to GitHub. Every incomplete thing is a debt. Clear it.", m: 30 },
-              { t: "Set up your portfolio GitHub repo: fullstack-designer-portfolio. Initialize it with a README that describes what you're building and why.", m: 15 },
+              { t: "Continue or complete the Odin Rock Paper Scissors project. Push to GitHub with a descriptive README.", m: 50 },
+              { t: "Open every project from Weeks 1–11 on GitHub. Review each as if you're seeing it for the first time. Write: what holds up? What would you rebuild? Be specific — not 'it's bad' but 'I would change the naming convention because...'", m: 30 },
+              { t: "List the 3 Odin sections remaining in Foundations. Estimate how many sessions each will take at your pace. Build a realistic timeline.", m: 10 },
             ],
-            anchor: "Knuth reviewed The Art of Computer Programming continuously for decades. The standard of review you apply to your own work is the ceiling of your eventual quality.",
+            anchor: "Knuth reviewed his own work for decades. The standard of review you apply to your own code is the ceiling of your eventual quality. Never skip the retrospective.",
           },
           {
-            day: "Saturday, August 22", label: "12:00 PM",
+            day: "Saturday, Aug 23", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Swipe File Retrospective — Name Your Aesthetic",
+            title: "Swipe File Retrospective — Name Your Visual World",
             tasks: [
-              { t: "Scroll your entire Swipe File from Week 1. What patterns emerge in what you saved? Write: 5 words that describe your developing aesthetic. Not aspirational — honest.", m: 25 },
-              { t: "Write 400 words: 'My visual sensibility at Week 12.' What do you now see that you couldn't see in Week 1? What still confuses you? What has become obvious?", m: 30 },
-              { t: "Identify one designer or studio whose work consistently moves you. Study their portfolio for 20 min. Write: what is the one decision they make consistently that defines their work?", m: 20 },
+              { t: "Scroll your entire Swipe File — all three sections. What patterns appear? What do you save regardless of medium? Write: 5 words that describe your developing aesthetic. Not aspirational — honest.", m: 25 },
+              { t: "Write 400 words: 'My visual world at Week 12.' What do you now see that you couldn't see in Week 1? What confuses you still? What has become obvious? What kind of environments, images, and objects do you want to design?", m: 35 },
+              { t: "Share this reflection in Design Buddies or Read.cv. Making your taste public sharpens it. Responses from others will reveal what they see in your choices that you can't see yourself.", m: 15 },
             ],
-            anchor: "Rand: 'Art is an idea that has found its perfect visual expression.' You are building toward that — a point of view so clear that your work is identifiable. Week 12 is not the destination. It is the foundation.",
+            anchor: "Rand: 'Art is an idea that has found its perfect visual expression.' Your idea is forming. You can feel it in what you save, what you notice, what makes you stop. Phase 2 is about giving that idea a more precise expression.",
           },
           {
-            day: "Monday, August 25", label: "12:00 PM",
+            day: "Monday, Aug 25", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "Set Phase 2 Intentions — The Final Feynman Close",
+            title: "Set Phase 2 Intentions — The Phase 1 Feynman Close",
             tasks: [
-              { t: "Write: 3 specific things you will build differently in Phase 2, based on what you learned in Phase 1. Not vague intentions — specific, behavioral changes.", m: 20 },
-              { t: "Set up your portfolio site scaffold: Vite project, index.html placeholder, deploy to Vercel. The URL should exist before Phase 2 begins.", m: 30 },
-              { t: "PHASE 1 FEYNMAN CLOSE: Write one page — no more, no less. The question: 'What does it mean to be a full stack designer, and what have I learned in 12 weeks toward that?' Be honest about the gaps. They are the Phase 2 syllabus.", m: 25 },
+              { t: "Write: 3 specific, behavioral things you will do differently in Phase 2. Not 'be more consistent' — 'I will post work in community before I feel it's ready, starting Week 13.'", m: 20 },
+              { t: "Set up your portfolio: Vite project, deploy to Vercel. Your URL should exist before Phase 2 begins. Empty is fine. It must exist.", m: 30 },
+              { t: "PHASE 1 FEYNMAN CLOSE: Write one page. Question: 'What kind of designer am I becoming — on screen, on page, and in the world? And what do I still not understand?' Be honest. Keep it. The answer will change.", m: 25 },
             ],
-            anchor: "Feynman at the end of his life, on his blackboard: 'What I cannot create, I do not understand.' Phase 1 taught you to create the foundations. Phase 2 is where you begin to understand them.",
+            anchor: "Feynman at the end of his life: 'What I cannot create, I do not understand.' Phase 1 taught you to create the foundations. Phase 2 is where you begin to understand what they make possible.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: This week — rest from new content. Finish any open Odin projects. Write in your design journal. Let Phase 1 settle before Phase 2 begins.",
       },
     ],
   },
@@ -545,55 +573,56 @@ const PHASES = [
     id: 1,
     label: "Phase 2",
     title: "Integration",
-    subtitle: "Weeks 13–28 · ~4 months",
+    subtitle: "~4 months · React + Deep Taste Development",
     color: "#F0FFF6",
     accent: "#00B85C",
     darkAccent: "#008040",
-    tagline: "Move fluidly between Figma and React. Zero friction between intention and execution.",
+    tagline: "React for screen. Spatial visits, editorial study, and photography for everything else. Both tracks, every week.",
     weeks: [
       {
         week: 13,
-        theme: "React — Component Thinking at Scale",
-        goal: "React is not a framework. It is a mental model for decomposing interfaces into reusable, intentional decisions.",
+        theme: "React Foundations + Spatial & Editorial Deep Dive",
+        goal: "React is your primary digital building material. Spatial thinking and editorial study are your analog building materials. Develop all of them in parallel.",
         sessions: [
           {
-            day: "Friday, Aug 28", label: "12:00 PM",
+            day: "Friday", label: "12:00 PM",
             track: "Code",
-            duration: "75 min",
-            title: "React Foundations — Components as Design Atoms",
+            duration: "90 min",
+            title: "React: Thinking in Components",
             tasks: [
-              { t: "Read Odin React intro. Then read the official React docs 'Thinking in React' page (react.dev). These two together give you the complete mental model.", m: 25 },
-              { t: "Build your first component: a styled Card in JSX with props for title, description, and CTA. Make it look good. Ugly React practice is a bad habit.", m: 35 },
-              { t: "Read Refactoring UI: 'Working with Shadows' section. Add appropriate shadows to your Card. No default box-shadow — custom, considered.", m: 15 },
+              { t: "Read Odin React intro AND React's official 'Thinking in React' page (react.dev — free). Both together give you the complete mental model. Write: what is the difference between a React component and an HTML element?", m: 30 },
+              { t: "Build your first component: a Card with props for title, description, and CTA. Make it look good. Ugly React practice is a bad habit — the same standard applies to every line of code.", m: 40 },
+              { t: "Install Tailwind CSS in the project. Apply base styling. Note: how does utility-first CSS feel different from writing custom CSS?", m: 20 },
             ],
-            anchor: "A component is a reusable design decision. React forces you to think in systems before you think in screens. This is the right order.",
+            anchor: "A React component is a reusable design decision. A recurring spatial element in a considered room — a window proportion, a material palette, a light fixture — is the same concept. Both are design languages built from intelligent repetition.",
           },
           {
-            day: "Saturday, Aug 29", label: "12:00 PM",
+            day: "Saturday", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "DesignCode.io — The Figma to React Bridge",
+            title: "Visit a Designed Space — Intentionally",
             tasks: [
-              { t: "Start DesignCode.io React course — Lessons 1–2. Take notes on every place where the Figma decision directly maps to a React/CSS decision.", m: 40 },
-              { t: "Open the course's Figma file. Study the component architecture — how is it organized? How does the Figma structure anticipate the React structure?", m: 20 },
-              { t: "Add 5 pieces to your Swipe File focused on React-built interfaces. Note one thing in each that could only be done in code, not in Figma.", m: 15 },
+              { t: "Visit a museum, gallery, boutique, hotel lobby, or restaurant you consider well-designed. Spend 30 min there with full attention. Photograph it. Write: what 5 specific design decisions define the experience? Light quality, material selection, spatial sequence, scale, sound, color?", m: 40 },
+              { t: "Start DesignCode.io React course (designcode.io — paid, ~$99/year, worth it for Phase 2) — Lessons 1–2. Note every place a Figma decision maps directly to a React decision.", m: 20 },
+              { t: "Post your spatial analysis in Design Buddies. Ask: has anyone else done this? What did they notice that you didn't?", m: 15 },
             ],
-            anchor: "The Figma → React handoff is where most designer-developers stall. The goal is zero translation cost — what you design, you can build, and what you build reflects what you designed.",
+            anchor: "Ilse Crawford spends months observing a space before designing it. That depth of observation is what produces work that feels inevitable rather than imposed. Begin developing that habit now.",
           },
           {
-            day: "Monday, Sep 1", label: "12:00 PM",
+            day: "Monday", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "React Version of Phase 1 Landing Page — Then Teach It Back",
+            title: "React + Spatial Translation — Then Teach It Back",
             tasks: [
-              { t: "Scaffold a new Vite + React project in VS Code. Convert your Phase 1 landing page into React components: Nav, Hero, Card, Footer. Each a separate file.", m: 40 },
-              { t: "Add Tailwind CSS. Observe how utility classes feel vs. custom CSS. Write: what does Tailwind make easier? What does it obscure?", m: 20 },
-              { t: "FEYNMAN CLOSE: Write 'React components differ from HTML elements in that...' and 'The reason component-driven development produces better design systems is...'", m: 15 },
+              { t: "Scaffold Vite + React. Convert your Phase 1 landing page into components: Nav, Hero, Card, Footer. Each in its own file.", m: 40 },
+              { t: "Take one observation from your spatial visit — a proportion, a color relationship, a spatial rhythm — and translate it into a design decision for your landing page.", m: 20 },
+              { t: "FEYNMAN CLOSE: Write 'React components differ from HTML elements in that...' and 'Observing a designed space teaches a digital designer...' Post both in community.", m: 15 },
             ],
-            anchor: "Rebuild what you know to learn what you don't. The Phase 1 landing page is familiar enough that you can focus on the React mental model, not the design decisions.",
+            anchor: "The designers who move fluidly between media never stop studying — in galleries, in restaurants, in books, in theaters. The screen is one surface. Let everything else sharpen your eye for it.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Continue Odin JS on non-session days — Etch-a-Sketch and Calculator projects are ahead. Don't abandon Odin for React. Both are required.",
       },
     ],
   },
@@ -601,40 +630,40 @@ const PHASES = [
     id: 2,
     label: "Phase 3",
     title: "Systems Thinking",
-    subtitle: "Weeks 29–40 · ~3 months",
+    subtitle: "~3 months · Design Systems + Visual World",
     color: "#FFF5FF",
     accent: "#9900FF",
     darkAccent: "#7700CC",
-    tagline: "Build systems, not pages. Think in tokens. Design at scale.",
+    tagline: "Build systems that scale: from token to typeface, from component to room, from favicon to magazine cover.",
     weeks: [
       {
         week: 29,
-        theme: "Design Systems — The Architecture of Consistency",
-        goal: "A design system is not a component library. It is a set of decisions, made once, that scale across every surface a product touches.",
+        theme: "Design Systems + Visual World Systems",
+        goal: "A design system governs digital components. A visual world system governs everything. Build toward the larger thing — that's where cross-medium designers live.",
         sessions: [
           {
             day: "Friday", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Atomic Design — The Mental Model",
+            title: "Atomic Design — The Mental Model for Any System",
             tasks: [
-              { t: "Read Brad Frost's Atomic Design: Chapters 1–2 (free at bradfrost.com/atomic-design). For each level — atom, molecule, organism — find a real example in a product you use daily.", m: 35 },
-              { t: "Audit your existing Figma files. Label every element as atom, molecule, or organism. What's missing? What's duplicated without reason? Inconsistency is technical debt.", m: 25 },
-              { t: "Write: what is the cost of not having a design system? Be specific — in time, in inconsistency, in onboarding, in maintenance.", m: 15 },
+              { t: "Read Brad Frost's Atomic Design: Chapters 1–2 (free at bradfrost.com). For each level — atom, molecule, organism — find the equivalent in a magazine's editorial system AND in a well-designed interior.", m: 35 },
+              { t: "Audit your Figma work from Phases 1–2. And audit your Swipe File. What visual decisions appear consistently across digital, editorial, and spatial categories? Those are the atoms of your personal design language.", m: 25 },
+              { t: "Write your one-page 'Visual World Document': typefaces, color palette, spatial references, photographic references, emotional register. This is your design system for every medium.", m: 15 },
             ],
-            anchor: "Müller-Brockmann built grid systems because inconsistency was a form of noise. A design system eliminates the noise so the signal — the product's meaning — can be heard clearly.",
+            anchor: "Wes Anderson's visual world runs on a design system — specific palette, symmetrical grammar, precise typography, a particular material sensibility. It is as rigorous as any component library. More personal, probably.",
           },
           {
             day: "Saturday", label: "12:00 PM",
             track: "Code",
             duration: "75 min",
-            title: "Storybook — Where Systems Live in Code",
+            title: "Storybook — Where Your System Lives in Code",
             tasks: [
-              { t: "Install Storybook in a React project. Read the official intro docs before running a single command. Understand what it is before you use it.", m: 25 },
-              { t: "Write stories for: Button (4 states), Card (3 variants), Input (default, error, disabled). Each story is a design decision made explicit in code.", m: 35 },
-              { t: "Read Design Systems Handbook, Chapter 1 (free at invisionapp.com/inside-design). Note every place where the book's principles connect to what you just built.", m: 15 },
+              { t: "Install Storybook in your React project. Read the official intro docs before running a command.", m: 20 },
+              { t: "Write stories for Button (4 states), Card (3 variants), Input (default, error, disabled). Each story is a design decision made explicit and testable.", m: 40 },
+              { t: "Read Design Systems Handbook, Chapter 1 (free PDF — search 'InVision design systems handbook'). Note where the principles apply beyond digital.", m: 15 },
             ],
-            anchor: "Storybook is where design system intentions become component reality. If you can't write a story for a component, the component is not well-designed.",
+            anchor: "Storybook makes design system intentions visible in code. A well-documented component library is the closest thing code has to a published design manual.",
           },
           {
             day: "Monday", label: "12:00 PM",
@@ -642,14 +671,15 @@ const PHASES = [
             duration: "75 min",
             title: "Token Parity — Figma to CSS — Then Teach It Back",
             tasks: [
-              { t: "Define your complete token set in Figma Variables: color (primitive + semantic), spacing (4/8/12/16/24/32/48/64), type scale (12/14/16/20/24/32/40/48). Every token named semantically.", m: 35 },
-              { t: "Mirror every Figma token as a CSS custom property. Open both side by side. They should be identical in value and naming. Token parity is non-negotiable.", m: 25 },
-              { t: "FEYNMAN CLOSE: Write 'Design tokens differ from hardcoded values in that...' and 'The reason token parity between Figma and code matters is...'", m: 15 },
+              { t: "Define your complete token set in Figma Variables AND CSS custom properties. Color, spacing, type scale. Every token semantically named. Mirror them exactly.", m: 40 },
+              { t: "Verify: open Figma and your CSS file side by side. Every Figma token should have an exact CSS counterpart. Any mismatch is a system failure.", m: 20 },
+              { t: "FEYNMAN CLOSE: Write 'Design tokens work across a system because...' and 'A visual world system differs from a mood board because...'", m: 15 },
             ],
-            anchor: "Rams: 'Good design is thorough down to the last detail.' Token parity is that thoroughness. If Figma and code disagree, every downstream decision is built on a fault line.",
+            anchor: "Rams: 'Good design is thorough down to the last detail.' Token parity is that thoroughness — the spec and the code tell the same story.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Study one component from a public design system (Material, Linear, Vercel). Write: what decision did they make and why does it make sense?",
       },
     ],
   },
@@ -657,28 +687,28 @@ const PHASES = [
     id: 3,
     label: "Phase 4",
     title: "Ship & Specialize",
-    subtitle: "Weeks 41+ · Ongoing",
+    subtitle: "Ongoing · Build publicly, develop a point of view",
     color: "#FFF8F0",
     accent: "#FF6600",
     darkAccent: "#CC4400",
-    tagline: "The work IS the education now. Build publicly. Develop a point of view. Influence the standard.",
+    tagline: "Build publicly. Find your medium — or refuse to choose one. The best designers never did.",
     weeks: [
       {
         week: 41,
-        theme: "Portfolio — Your Strongest Design Project",
-        goal: "Your portfolio is the loudest design statement you will ever make. It must demonstrate not just skill, but point of view.",
+        theme: "Portfolio — Work That Exists in the World",
+        goal: "Your portfolio must communicate a point of view before anyone reads a project title. The analog demand is growing. Show work that lives on screen AND in the world.",
         sessions: [
           {
             day: "Friday", label: "12:00 PM",
             track: "Design",
             duration: "75 min",
-            title: "Design Your Portfolio With Conviction",
+            title: "Portfolio as Visual World — Not a Project List",
             tasks: [
-              { t: "Study three exceptional designer-developer portfolios: Maggie Appleton, Josh W. Comeau, Maxime Heckel. Write: what makes each one feel like a person, not a template? What specific decisions communicate identity?", m: 30 },
-              { t: "Sketch 3 portfolio concepts. Each must have a different spatial logic and a different emotional register. The one you're most afraid to build is probably the right one.", m: 25 },
-              { t: "Write your bio. Read it out loud. Does it sound like you or like a LinkedIn profile? Rewrite it until it sounds like you.", m: 20 },
+              { t: "Study three cross-medium portfolios: Pentagram (pentagram.com), 2x4 (2x4.org), or Sagmeister & Walsh. Write: how does each communicate a point of view before you read a single project description? What are the 3 decisions that make that possible?", m: 30 },
+              { t: "Inventory your work: digital projects, editorial experiments, spatial studies, photographs. Map them. Your portfolio needs at least one project that shows your point of view across more than one medium.", m: 25 },
+              { t: "Write your bio. Read it out loud. Does it sound like a person with something to say — or a resume? Rewrite until it sounds like you.", m: 20 },
             ],
-            anchor: "Rand: 'Visual communications of any kind, whether persuasive or informative, from billboards to birth announcements, should be seen as the embodiment of form and function: the integration of the beautiful and the useful.' Your portfolio is that integration.",
+            anchor: "Rand: 'Don't try to be original. Just try to be good.' Good means: a coherent point of view, expressed with precision and conviction, in every medium you choose to work in.",
           },
           {
             day: "Saturday", label: "12:00 PM",
@@ -686,359 +716,411 @@ const PHASES = [
             duration: "75 min",
             title: "Build in Next.js — Production Grade from Day One",
             tasks: [
-              { t: "Scaffold a Next.js portfolio project. Read the Next.js docs 'Getting Started' page before writing a single component. Understand the architecture first.", m: 20 },
-              { t: "Build the home page component structure. Every component named with intention. Framer Motion page transitions from the start — not added later.", m: 40 },
-              { t: "Deploy to Vercel. Your portfolio should have a live URL before it has content. Iterate in public.", m: 15 },
+              { t: "Scaffold Next.js portfolio. Read the 'Getting Started' docs before writing a component.", m: 20 },
+              { t: "Build home page structure. Framer Motion transitions from the start — not added later.", m: 40 },
+              { t: "Deploy to Vercel. Your portfolio must exist before it has content. Iterate in public.", m: 15 },
             ],
-            anchor: "Shipping early and iterating in public is how exceptional practitioners build reputation. The portfolio that exists beats the perfect one that doesn't.",
+            anchor: "Every practitioner eventually has to ship. The film has to screen. The magazine has to print. The website has to deploy. Ship.",
           },
           {
             day: "Monday", label: "12:00 PM",
             track: "Both",
             duration: "75 min",
-            title: "First Case Study — The Feynman Standard",
+            title: "First Case Study + Name Your Direction",
             tasks: [
-              { t: "Write the case study for your strongest Phase 1 project. Structure: the problem you were solving, the 3 most important design decisions, what you built, what you learned, what you'd do differently. 400 words minimum.", m: 35 },
-              { t: "Add it to the portfolio. Share it somewhere — Read.cv, Twitter, LinkedIn. Observe what resonates. That feedback is curriculum.", m: 20 },
-              { t: "FINAL FEYNMAN CLOSE: Write 'What does it mean to be a full stack designer who influences the standard, rather than follows it?' Answer it honestly. Keep it. Reread it in Phase 1, Week 12, and again here.", m: 20 },
+              { t: "Write your first case study — your strongest Phase 1 project. Structure: the visual world you were building toward, the 3 most important decisions, what you built, what the work taught you about your point of view. 400 words minimum.", m: 35 },
+              { t: "Name your specialization direction: set design, interior design, editorial, photography, digital product, or the designer who refuses to specialize. Write: why this? What work points toward it?", m: 20 },
+              { t: "FINAL FEYNMAN CLOSE: Write 'What kind of designer am I, and what do I have to say that no one else is saying — in any medium?' Answer honestly. This is not the last time you will answer it.", m: 20 },
             ],
             anchor: "Feynman: 'Study hard what interests you the most in the most undisciplined, irreverent and original manner possible.' You are not becoming a good designer. You are becoming someone who changes what good means.",
             feynman: true,
           },
         ],
+        dailyHabit: "20 min/day: Post one piece of work, one observation, or one question publicly every week — Read.cv, Design Buddies, Reddit. Your public practice is your reputation being built in real time.",
       },
     ],
   },
 ];
 
-const PHASE_ACCENTS = ["#0EA5E9", "#10B981", "#8B5CF6", "#F97316"];
-const PHASE_NAMES = ["Phase 1", "Phase 2", "Phase 3", "Phase 4"];
 
-const TRACK_STYLES = {
-  "Code":   { bg: "#EFF6FF", color: "#0369A1", dot: "#0EA5E9" },
-  "Design": { bg: "#F5F3FF", color: "#6D28D9", dot: "#8B5CF6" },
-  "Both":   { bg: "#FFF7ED", color: "#C2410C", dot: "#F97316" },
-};
+const ODIN_SECTIONS = [
+  { id:"intro",    title:"Introduction",     accent:"#00A896", lessons:[
+    { id:"i1", title:"How This Course Will Work",       done:true,  date:"" },
+    { id:"i2", title:"Introduction to Web Development", done:true,  date:"" },
+    { id:"i3", title:"Motivation and Mindset",          done:true,  date:"" },
+    { id:"i4", title:"Asking For Help",                 done:true,  date:"" },
+    { id:"i5", title:"Join the Odin Community",         done:true,  date:"" },
+  ]},
+  { id:"prereqs", title:"Prerequisites",    accent:"#E07B39", lessons:[
+    { id:"p1", title:"How Does the Web Work?", done:true,  date:"" },
+    { id:"p2", title:"Installations",          done:false, date:"" },
+    { id:"p3", title:"Text Editors",           done:false, date:"" },
+    { id:"p4", title:"Command Line Basics",    done:false, date:"" },
+    { id:"p5", title:"Setting up Git",         done:false, date:"" },
+  ]},
+  { id:"git",  title:"Git Basics",          accent:"#0B7A75", lessons:[
+    { id:"g1", title:"Introduction to Git", done:false, date:"" },
+    { id:"g2", title:"Git Basics",          done:false, date:"" },
+  ]},
+  { id:"html", title:"HTML Foundations",    accent:"#C1440E", lessons:[
+    { id:"h1", title:"Introduction to HTML and CSS", done:false, date:"" },
+    { id:"h2", title:"Elements and Tags",             done:false, date:"" },
+    { id:"h3", title:"HTML Boilerplate",              done:false, date:"" },
+    { id:"h4", title:"Working with Text",             done:false, date:"" },
+    { id:"h5", title:"Lists",                         done:false, date:"" },
+    { id:"h6", title:"Links and Images",              done:false, date:"" },
+    { id:"h7", title:"Commit Messages",               done:false, date:"" },
+    { id:"h8", title:"Project: Recipes",              done:false, date:"", isProject:true },
+  ]},
+  { id:"css",  title:"CSS Foundations",     accent:"#1A5C8A", lessons:[
+    { id:"c1", title:"Intro to CSS",            done:false, date:"" },
+    { id:"c2", title:"The Cascade",             done:false, date:"" },
+    { id:"c3", title:"Inspecting HTML and CSS", done:false, date:"" },
+    { id:"c4", title:"The Box Model",           done:false, date:"" },
+    { id:"c5", title:"Block and Inline",        done:false, date:"" },
+  ]},
+  { id:"flex", title:"Flexbox",             accent:"#D4622A", lessons:[
+    { id:"f1", title:"Introduction to Flexbox", done:false, date:"" },
+    { id:"f2", title:"Growing and Shrinking",   done:false, date:"" },
+    { id:"f3", title:"Axes",                    done:false, date:"" },
+    { id:"f4", title:"Alignment",               done:false, date:"" },
+    { id:"f5", title:"Project: Landing Page",   done:false, date:"", isProject:true },
+  ]},
+  { id:"js",   title:"JavaScript Basics",   accent:"#1B7F5E", lessons:[
+    { id:"j1",  title:"Variables and Operators",        done:false, date:"" },
+    { id:"j2",  title:"Installing Node.js",             done:false, date:"" },
+    { id:"j3",  title:"Data Types and Conditionals",    done:false, date:"" },
+    { id:"j4",  title:"JavaScript Developer Tools",     done:false, date:"" },
+    { id:"j5",  title:"Function Basics",                done:false, date:"" },
+    { id:"j6",  title:"Problem Solving",                done:false, date:"" },
+    { id:"j7",  title:"Understanding Errors",           done:false, date:"" },
+    { id:"j8",  title:"Project: Rock Paper Scissors",   done:false, date:"", isProject:true },
+    { id:"j9",  title:"Clean Code",                     done:false, date:"" },
+    { id:"j10", title:"Loops and Arrays",               done:false, date:"" },
+    { id:"j11", title:"DOM Manipulation and Events",    done:false, date:"" },
+    { id:"j12", title:"Revisiting Rock Paper Scissors", done:false, date:"" },
+    { id:"j13", title:"Project: Etch-a-Sketch",         done:false, date:"", isProject:true },
+    { id:"j14", title:"Object Basics",                  done:false, date:"" },
+    { id:"j15", title:"Project: Calculator",            done:false, date:"", isProject:true },
+  ]},
+  { id:"end",  title:"Conclusion",          accent:"#5A6E78", lessons:[
+    { id:"cl1", title:"Choose Your Path Forward", done:false, date:"" },
+  ]},
+];
 
-function TrackPill({ track }) {
-  const s = TRACK_STYLES[track] || TRACK_STYLES["Both"];
-  return (
-    <span style={{
-      background: s.bg, color: s.color,
-      fontSize: "10px", fontWeight: 700,
-      letterSpacing: "0.07em", textTransform: "uppercase",
-      padding: "3px 10px", borderRadius: "4px",
-      border: `1px solid ${s.dot}33`,
-      whiteSpace: "nowrap",
-    }}>{track}</span>
-  );
-}
+const BG      = "#F0EDE5";
+const SURFACE = "#FFFFFF";
+const HERO    = "#0D3B47";
+const BORDER  = "#DDD7CC";
+const TEXT    = "#181614";
+const MUTED   = "#6B6259";
+const GOLD    = "#E8A630";
 
-function TaskRow({ task, done, onToggle, accent }) {
-  return (
-    <div onClick={onToggle} style={{
-      display: "flex", alignItems: "flex-start", gap: "14px",
-      padding: "13px 0", borderBottom: "1px solid #F3F4F6",
-      cursor: "pointer", opacity: done ? 0.38 : 1, transition: "opacity 0.15s",
-    }}>
-      <div style={{
-        width: "20px", height: "20px", borderRadius: "4px",
-        flexShrink: 0, marginTop: "2px",
-        border: done ? "none" : `1.5px solid #D1D5DB`,
-        background: done ? accent : "transparent",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        transition: "all 0.15s",
-      }}>
-        {done && <span style={{ color: "#fff", fontSize: "11px", fontWeight: 800, lineHeight: 1 }}>✓</span>}
-      </div>
-      <span style={{
-        flex: 1, fontSize: "14px", color: "#1F2937", lineHeight: 1.65,
-        textDecoration: done ? "line-through" : "none",
-        textDecorationColor: "#9CA3AF",
-      }}>{task.t}</span>
-      <span style={{ color: "#9CA3AF", fontSize: "12px", whiteSpace: "nowrap", paddingTop: "2px" }}>{task.m}m</span>
-    </div>
-  );
-}
-
-function SessionCard({ session, accent, completedTasks, onToggleTask }) {
-  const totalMin = session.tasks.reduce((a, t) => a + t.m, 0);
-  const doneCount = session.tasks.filter((_, i) => completedTasks[i]).length;
-  const allDone = doneCount === session.tasks.length;
-  const pct = session.tasks.length ? (doneCount / session.tasks.length) * 100 : 0;
-
-  return (
-    <div style={{
-      background: "#FFF",
-      border: "1px solid #E5E7EB",
-      borderRadius: "12px",
-      overflow: "hidden",
-    }}>
-      {/* Progress bar */}
-      <div style={{ height: "3px", background: "#F3F4F6" }}>
-        <div style={{
-          height: "100%", width: `${pct}%`,
-          background: accent, transition: "width 0.35s ease",
-        }} />
-      </div>
-
-      {/* Header */}
-      <div style={{ padding: "18px 24px 14px", borderBottom: "1px solid #F9FAFB" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "10px", flexWrap: "wrap" }}>
-          <span style={{
-            fontSize: "11px", fontWeight: 700, color: accent,
-            letterSpacing: "0.04em", textTransform: "uppercase",
-          }}>{session.day}</span>
-          {session.label && <span style={{ fontSize: "11px", color: "#9CA3AF" }}>· {session.label}</span>}
-          <span style={{ fontSize: "11px", color: "#9CA3AF" }}>· {totalMin} min</span>
-          <TrackPill track={session.track} />
-          {session.feynman && (
-            <span style={{
-              background: "#FFF7ED", color: "#C2410C",
-              border: "1px solid #FED7AA",
-              fontSize: "10px", fontWeight: 700,
-              letterSpacing: "0.06em", textTransform: "uppercase",
-              padding: "3px 10px", borderRadius: "4px",
-            }}>✎ Feynman Close</span>
-          )}
-          {allDone && (
-            <span style={{
-              marginLeft: "auto", background: accent,
-              color: "#FFF", fontSize: "10px", fontWeight: 700,
-              padding: "3px 12px", borderRadius: "4px", letterSpacing: "0.04em",
-            }}>DONE ✓</span>
-          )}
-        </div>
-        <h3 style={{
-          fontFamily: "'Clash Display', 'Inter', sans-serif",
-          fontSize: "15px", fontWeight: 700, color: "#111827",
-          lineHeight: 1.35, letterSpacing: "-0.03em", textTransform: "uppercase",
-        }}>{session.title}</h3>
-      </div>
-
-      {/* Tasks */}
-      <div style={{ padding: "0 24px" }}>
-        {session.tasks.map((task, ti) => (
-          <TaskRow key={ti} task={task} done={!!completedTasks[ti]}
-            onToggle={() => onToggleTask(ti)} accent={accent} />
-        ))}
-      </div>
-
-      {/* Anchor */}
-      <div style={{ padding: "12px 24px 20px" }}>
-        <div style={{
-          borderLeft: `3px solid ${accent}`,
-          paddingLeft: "14px",
-        }}>
-          <p style={{
-            fontSize: "13px", color: "#6B7280", lineHeight: 1.75,
-            fontStyle: "italic",
-          }}>{session.anchor}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
+const PHASE_ACCENTS = ["#00A896","#E07B39","#1A5C8A","#1B7F5E"];
+const TRACK_ACCENTS = { Code:"#1A5C8A", Design:"#D4622A", Both:"#00A896" };
 
 export default function App() {
+  const [tab, setTab] = useState("syllabus");
   const [activePhase, setActivePhase] = useState(0);
   const [activeWeekIdx, setActiveWeekIdx] = useState(0);
-  const [completed, setCompleted] = useState({});
+
+  const buildInitial = () => {
+    const init = {};
+    PHASES.forEach((ph,pi) => ph.weeks.forEach((w,wi) => w.sessions.forEach((s,si) =>
+      s.tasks.forEach((t,ti) => { if(t.done) init[`p${pi}-w${wi}-s${si}-t${ti}`]=true; })
+    )));
+    return init;
+  };
+  const [completed, setCompleted] = useState(buildInitial);
+
+  const initOdin = () => Object.fromEntries(
+    ODIN_SECTIONS.flatMap(s => s.lessons).map(l => [l.id,{ done:l.done, date:l.date }])
+  );
+  const [odin, setOdin] = useState(initOdin);
+
+  const toggleOdin = id => setOdin(p => ({ ...p, [id]:{ ...p[id], done:!p[id].done } }));
+  const setOdinDate = (id,v) => setOdin(p => ({ ...p, [id]:{ ...p[id], date:v } }));
+
+  const odinFlat = ODIN_SECTIONS.flatMap(s => s.lessons.map(l => ({ ...l,...(odin[l.id]||{}) })));
+  const odinDone = odinFlat.filter(l=>l.done).length;
+  const odinTotal = odinFlat.length;
+  const pct = Math.round((odinDone/odinTotal)*100);
 
   const phase = PHASES[activePhase];
-  const accent = PHASE_ACCENTS[activePhase];
   const week = phase.weeks[activeWeekIdx] || phase.weeks[0];
+  const accent = PHASE_ACCENTS[activePhase];
 
-  const toggleTask = (si, ti) => {
-    const key = `p${activePhase}-w${activeWeekIdx}-s${si}-t${ti}`;
-    setCompleted(prev => ({ ...prev, [key]: !prev[key] }));
+  const toggleTask = (si,ti) => {
+    const k = `p${activePhase}-w${activeWeekIdx}-s${si}-t${ti}`;
+    setCompleted(p => ({ ...p, [k]:!p[k] }));
   };
-
-  const getCompleted = (si, ti) => !!completed[`p${activePhase}-w${activeWeekIdx}-s${si}-t${ti}`];
-  const getSessionDone = (si) => week.sessions[si].tasks.every((_, ti) => getCompleted(si, ti));
-  const weekDoneCount = week.sessions.reduce((a, _, si) => a + (getSessionDone(si) ? 1 : 0), 0);
-  const weekComplete = weekDoneCount === week.sessions.length;
-  const totalWeekMin = week.sessions.reduce((a, s) => a + s.tasks.reduce((b, t) => b + t.m, 0), 0);
+  const getDone = (si,ti) => !!completed[`p${activePhase}-w${activeWeekIdx}-s${si}-t${ti}`];
 
   return (
-    <div style={{ minHeight: "100vh", background: "#F9FAFB", fontFamily: "'Inter', -apple-system, sans-serif" }}>
+    <div style={{ minHeight:"100vh", background:BG, fontFamily:"'Inter','Helvetica Neue',sans-serif", color:TEXT }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-        @import url('https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap');
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        button { font-family: inherit; cursor: pointer; }
-        ::-webkit-scrollbar { width: 3px; }
-        ::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 3px; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
+        * { box-sizing:border-box; margin:0; padding:0; }
+        ::-webkit-scrollbar { width:3px; }
+        ::-webkit-scrollbar-thumb { background:${BORDER}; border-radius:2px; }
+        input[type=text]:focus { outline:none; }
+        button { cursor:pointer; font-family:inherit; }
       `}</style>
 
-      {/* Nav */}
-      <div style={{
-        background: "#FFF", borderBottom: "1px solid #E5E7EB",
-        padding: "0 40px", display: "flex", alignItems: "stretch",
-        position: "sticky", top: 0, zIndex: 20,
-        boxShadow: "0 1px 0 #E5E7EB",
-      }}>
-        <div style={{
-          display: "flex", alignItems: "center", gap: "10px",
-          paddingRight: "28px", marginRight: "4px",
-          borderRight: "1px solid #F3F4F6",
-        }}>
-          <span style={{
-            fontFamily: "'Clash Display', sans-serif",
-            fontSize: "16px", fontWeight: 700, color: "#111827",
-            letterSpacing: "-0.03em", textTransform: "uppercase",
-            whiteSpace: "nowrap",
-          }}>Full Stack Designer</span>
-          {/* HYF Hexagon Mark */}
-          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0, marginBottom: "1px" }}>
-            <polygon points="13,1 24,7 24,19 13,25 2,19 2,7" fill="#111827" />
-            <text x="13" y="16.5" textAnchor="middle" fill="white" fontSize="7.5" fontWeight="700" fontFamily="'Clash Display', sans-serif" letterSpacing="0.5">HYF</text>
-          </svg>
+      {/* NAV */}
+      <div style={{ background:SURFACE, borderBottom:`1px solid ${BORDER}`, padding:"0 36px", display:"flex", alignItems:"stretch", position:"sticky", top:0, zIndex:20, boxShadow:"0 1px 3px rgba(0,0,0,0.06)" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:"10px", paddingRight:"28px", marginRight:"4px", borderRight:`1px solid ${BORDER}` }}>
+          <div style={{ width:"8px", height:"8px", borderRadius:"50%", background:accent, boxShadow:`0 0 0 3px ${accent}33` }} />
+          <span style={{ fontFamily:"'Clash Display',sans-serif", fontSize:"13px", fontWeight:700, color:TEXT, letterSpacing:"0.05em", textTransform:"uppercase" }}>Full Stack Designer</span>
         </div>
-        {PHASES.map((p, i) => (
-          <button key={i}
-            onClick={() => { setActivePhase(i); setActiveWeekIdx(0); }}
-            style={{
-              background: "none", border: "none",
-              padding: "0 18px",
-              fontSize: "13px", fontWeight: i === activePhase ? 600 : 400,
-              color: i === activePhase ? "#111827" : "#6B7280",
-              position: "relative", whiteSpace: "nowrap",
-              transition: "color 0.15s",
-              borderBottom: i === activePhase ? `2px solid ${PHASE_ACCENTS[i]}` : "2px solid transparent",
-            }}
-          >{p.label}: {p.title}</button>
+        {[{ key:"syllabus", label:"Syllabus" },{ key:"odin", label:`Odin — ${odinDone}/${odinTotal}` }].map(({key,label}) => (
+          <button key={key} onClick={() => setTab(key)} style={{
+            background:"none", border:"none", padding:"0 20px", height:"49px",
+            fontSize:"12px", fontWeight: tab===key ? 600 : 400,
+            color: tab===key ? TEXT : MUTED,
+            borderBottom: tab===key ? `2px solid ${accent}` : "2px solid transparent",
+            letterSpacing:"0.05em", textTransform:"uppercase", transition:"all 0.15s",
+          }}>{label}</button>
         ))}
       </div>
 
-      <div style={{ display: "flex", height: "calc(100vh - 49px)" }}>
+      {tab === "odin" ? (
+        <div style={{ maxWidth:"680px", margin:"0 auto", padding:"48px 24px" }}>
 
-        {/* Sidebar */}
-        <div style={{
-          width: "280px", flexShrink: 0,
-          background: "#FFF", borderRight: "1px solid #E5E7EB",
-          overflowY: "auto", padding: "24px 16px",
-        }}>
-          <div style={{
-            fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em",
-            textTransform: "uppercase", color: "#9CA3AF",
-            padding: "0 10px", marginBottom: "10px",
-          }}>{phase.label} — {phase.title}</div>
-          {phase.weeks.map((w, wi) => {
-            const wDone = w.sessions.every((_, si) =>
-              w.sessions[si].tasks.every((_, ti) => !!completed[`p${activePhase}-w${wi}-s${si}-t${ti}`])
-            );
-            const isActive = wi === activeWeekIdx;
+          {/* Hero stat */}
+          <div style={{ background:HERO, borderRadius:"16px", padding:"36px 40px", marginBottom:"36px", display:"flex", alignItems:"center", gap:"40px", position:"relative", overflow:"hidden" }}>
+            {/* decorative circle */}
+            <div style={{ position:"absolute", right:"-40px", top:"-40px", width:"180px", height:"180px", borderRadius:"50%", background:"#00A89620", pointerEvents:"none" }} />
+            <div>
+              <div style={{ fontFamily:"'Clash Display',sans-serif", fontSize:"72px", fontWeight:700, color:"#fff", letterSpacing:"-0.04em", lineHeight:1 }}>
+                {pct}<span style={{ color:GOLD }}>%</span>
+              </div>
+              <p style={{ fontSize:"12px", color:"#5B8A96", marginTop:"10px", letterSpacing:"0.07em", textTransform:"uppercase" }}>
+                {odinDone} of {odinTotal} · Foundations
+              </p>
+            </div>
+            <div style={{ flex:1 }}>
+              <div style={{ height:"6px", background:"#0A2A33", borderRadius:"3px", overflow:"hidden", marginBottom:"10px" }}>
+                <div style={{ height:"100%", width:`${pct}%`, background:GOLD, borderRadius:"3px", transition:"width 0.4s ease" }} />
+              </div>
+              <p style={{ fontSize:"11px", color:"#3D6874", letterSpacing:"0.06em", textTransform:"uppercase" }}>{odinTotal-odinDone} lessons remaining</p>
+            </div>
+          </div>
+
+          {ODIN_SECTIONS.map(section => {
+            const sl = section.lessons.map(l => ({ ...l,...(odin[l.id]||{}) }));
+            const sd = sl.filter(l=>l.done).length;
+            const sp = Math.round((sd/sl.length)*100);
+            const done = sd===sl.length;
             return (
-              <button key={wi} onClick={() => setActiveWeekIdx(wi)} style={{
-                width: "100%", textAlign: "left", border: "none",
-                background: isActive ? `${accent}0D` : "transparent",
-                borderLeft: isActive ? `3px solid ${accent}` : "3px solid transparent",
-                borderRadius: "0 8px 8px 0",
-                padding: "10px 12px", marginBottom: "2px",
-                transition: "all 0.12s",
-              }}>
-                <div style={{
-                  fontSize: "10px", fontWeight: 700, letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  color: isActive ? accent : "#9CA3AF",
-                  marginBottom: "3px", display: "flex", justifyContent: "space-between",
-                }}>
-                  <span>Week {w.week}</span>
-                  {wDone && <span>✓</span>}
+              <div key={section.id} style={{ background:SURFACE, borderRadius:"12px", border:`1px solid ${BORDER}`, marginBottom:"10px", overflow:"hidden" }}>
+                <div style={{ padding:"14px 20px", display:"flex", alignItems:"center", gap:"12px", borderBottom:`1px solid #F0EBE2` }}>
+                  <div style={{ width:"10px", height:"10px", borderRadius:"50%", background:section.accent, flexShrink:0, boxShadow:`0 0 0 3px ${section.accent}22` }} />
+                  <span style={{ fontFamily:"'Clash Display',sans-serif", fontSize:"14px", fontWeight:700, color:TEXT, flex:1, letterSpacing:"-0.01em" }}>{section.title}</span>
+                  <div style={{ display:"flex", alignItems:"center", gap:"10px" }}>
+                    <div style={{ width:"80px", height:"3px", background:"#EDE8DF", borderRadius:"2px", overflow:"hidden" }}>
+                      <div style={{ height:"100%", width:`${sp}%`, background:section.accent, borderRadius:"2px", transition:"width 0.3s" }} />
+                    </div>
+                    <span style={{ fontSize:"11px", fontWeight:600, color:done ? section.accent : MUTED, whiteSpace:"nowrap", letterSpacing:"0.03em" }}>
+                      {done ? "✓ Done" : `${sd}/${sl.length}`}
+                    </span>
+                  </div>
                 </div>
-                <div style={{
-                  fontSize: "12px", fontWeight: isActive ? 600 : 400,
-                  color: isActive ? "#111827" : "#6B7280", lineHeight: 1.4,
-                }}>{w.theme}</div>
-              </button>
+                {sl.map((lesson,idx) => (
+                  <div key={lesson.id} style={{
+                    display:"flex", alignItems:"center", gap:"14px", padding:"11px 20px",
+                    borderBottom: idx<sl.length-1 ? "1px solid #F7F4EF" : "none",
+                    background: lesson.done ? `${section.accent}09` : "transparent",
+                    transition:"background 0.15s",
+                  }}>
+                    <button onClick={() => toggleOdin(lesson.id)} style={{
+                      width:"20px", height:"20px", borderRadius:"50%", flexShrink:0, border:"none",
+                      background: lesson.done ? section.accent : "transparent",
+                      outline: lesson.done ? "none" : `1.5px solid ${BORDER}`,
+                      display:"flex", alignItems:"center", justifyContent:"center", transition:"all 0.2s",
+                      boxShadow: lesson.done ? `0 0 0 3px ${section.accent}22` : "none",
+                    }}>
+                      {lesson.done && <svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6L8 1" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+                    </button>
+                    <span style={{
+                      flex:1, fontSize:"13px", lineHeight:1.5,
+                      color: lesson.done ? MUTED : TEXT,
+                      textDecoration: lesson.done ? "line-through" : "none",
+                      textDecorationColor:"#C4BBB0",
+                      fontStyle: lesson.isProject ? "italic" : "normal",
+                      fontWeight: lesson.isProject ? 500 : 400,
+                    }}>
+                      {lesson.isProject && <span style={{ color:section.accent, marginRight:"6px", fontStyle:"normal", fontSize:"10px" }}>◆</span>}
+                      {lesson.title}
+                    </span>
+                    <input type="text" value={lesson.date} onChange={e => setOdinDate(lesson.id,e.target.value)}
+                      placeholder="MM/DD"
+                      style={{
+                        width:"62px", fontSize:"12px", textAlign:"center", background:"transparent",
+                        border: lesson.date ? `1px solid ${section.accent}` : `1px solid ${BORDER}`,
+                        borderRadius:"6px", padding:"4px 6px",
+                        color: lesson.date ? section.accent : MUTED,
+                        transition:"border 0.15s, color 0.15s",
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
             );
           })}
         </div>
 
-        {/* Content */}
-        <div style={{ flex: 1, overflowY: "auto", padding: "36px 64px", background: "#F9FAFB" }}>
+      ) : (
+        <div style={{ display:"flex", height:"calc(100vh - 49px)" }}>
 
-          {/* Week header */}
-          <div style={{ marginBottom: "32px" }}>
-            <div style={{
-              fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em",
-              textTransform: "uppercase", color: accent, marginBottom: "10px",
-            }}>Week {week.week} · {week.sessions.length} sessions · {totalWeekMin} min</div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "24px", flexWrap: "wrap" }}>
-              <div style={{ flex: 1 }}>
-                <h2 style={{
-                  fontFamily: "'Clash Display', sans-serif",
-                  fontSize: "30px", fontWeight: 700, color: "#111827",
-                  letterSpacing: "-0.025em", lineHeight: 1.2, marginBottom: "12px",
-                }}>{week.theme}</h2>
-                <p style={{ fontSize: "14px", color: "#6B7280", lineHeight: 1.75, maxWidth: "680px" }}>
-                  {week.goal}
-                </p>
+          {/* Sidebar */}
+          <div style={{ width:"224px", flexShrink:0, background:SURFACE, borderRight:`1px solid ${BORDER}`, overflowY:"auto", padding:"20px 0" }}>
+            {PHASES.map((p,pi) => {
+              const ac = PHASE_ACCENTS[pi];
+              return (
+                <div key={pi} style={{ marginBottom:"20px" }}>
+                  <div style={{ fontSize:"10px", fontWeight:600, letterSpacing:"0.12em", textTransform:"uppercase", color:"#BDB5AA", padding:"0 20px", marginBottom:"6px" }}>
+                    {p.label}
+                  </div>
+                  {p.weeks.map((w,wi) => {
+                    const isActive = pi===activePhase && wi===activeWeekIdx;
+                    return (
+                      <button key={wi} onClick={() => { setActivePhase(pi); setActiveWeekIdx(wi); }} style={{
+                        width:"100%", textAlign:"left", border:"none",
+                        background: isActive ? `${ac}14` : "transparent",
+                        borderLeft: isActive ? `3px solid ${ac}` : "3px solid transparent",
+                        padding:"9px 20px", marginBottom:"1px", transition:"all 0.12s",
+                      }}>
+                        <div style={{ fontSize:"10px", fontWeight:600, letterSpacing:"0.06em", textTransform:"uppercase", color: isActive ? ac : "#BDB5AA", marginBottom:"3px" }}>Wk {w.week}</div>
+                        <div style={{ fontSize:"12px", color: isActive ? TEXT : MUTED, lineHeight:1.4, fontWeight: isActive ? 600 : 400 }}>{w.theme}</div>
+                      </button>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Main */}
+          <div style={{ flex:1, overflowY:"auto", background:BG }}>
+
+            {/* Week hero — deep ocean teal, not black */}
+            <div style={{ background:HERO, padding:"36px 48px", position:"relative", overflow:"hidden" }}>
+              <div style={{ position:"absolute", right:"-60px", bottom:"-60px", width:"240px", height:"240px", borderRadius:"50%", background:`${accent}18`, pointerEvents:"none" }} />
+              <div style={{ display:"flex", alignItems:"center", gap:"8px", marginBottom:"14px" }}>
+                <div style={{ width:"7px", height:"7px", borderRadius:"50%", background:GOLD, boxShadow:`0 0 0 3px ${GOLD}33` }} />
+                <span style={{ fontSize:"11px", fontWeight:600, letterSpacing:"0.1em", textTransform:"uppercase", color:"#4E8494" }}>
+                  {phase.label} · Week {week.week}
+                </span>
               </div>
-              <div style={{
-                flexShrink: 0, textAlign: "center",
-                padding: "18px 24px", background: "#FFF",
-                border: `1px solid ${weekComplete ? accent : "#E5E7EB"}`,
-                borderRadius: "12px",
-              }}>
-                <div style={{
-                  fontFamily: "'Clash Display', sans-serif",
-                  fontSize: "34px", fontWeight: 700, color: weekComplete ? accent : "#111827",
-                  lineHeight: 1,
-                }}>{weekDoneCount}/{week.sessions.length}</div>
-                <div style={{
-                  fontSize: "10px", fontWeight: 700, letterSpacing: "0.1em",
-                  textTransform: "uppercase", color: "#9CA3AF", marginTop: "5px",
-                }}>sessions</div>
+              <h2 style={{ fontFamily:"'Clash Display',sans-serif", fontSize:"clamp(26px,3.5vw,42px)", fontWeight:700, color:"#fff", letterSpacing:"-0.03em", lineHeight:1.1, marginBottom:"14px" }}>
+                {week.theme}
+              </h2>
+              <p style={{ fontSize:"14px", color:"#4E8494", lineHeight:1.8, maxWidth:"520px", fontWeight:300 }}>
+                {week.goal}
+              </p>
+            </div>
+
+            <div style={{ padding:"28px 48px", display:"flex", flexDirection:"column", gap:"12px" }}>
+
+              {week.dailyHabit && (
+                <div style={{ background:SURFACE, border:`1px solid ${BORDER}`, borderLeft:`4px solid ${GOLD}`, borderRadius:"0 10px 10px 0", padding:"14px 18px" }}>
+                  <div style={{ fontSize:"10px", fontWeight:600, letterSpacing:"0.1em", textTransform:"uppercase", color:GOLD, marginBottom:"5px" }}>Daily · 20 min</div>
+                  <p style={{ fontSize:"13px", color:MUTED, lineHeight:1.7, fontWeight:300 }}>{week.dailyHabit}</p>
+                </div>
+              )}
+
+              {week.sessions.map((session,si) => {
+                const tc = TRACK_ACCENTS[session.track] || accent;
+                const checkable = session.tasks.filter(t=>t.m>0);
+                const doneN = checkable.filter((_,i) => getDone(si,session.tasks.indexOf(checkable[i]))).length;
+                const allDone = checkable.length>0 && doneN===checkable.length;
+                const pctS = checkable.length ? Math.round((doneN/checkable.length)*100) : 0;
+                return (
+                  <div key={si} style={{ background:SURFACE, border:`1px solid ${BORDER}`, borderRadius:"12px", overflow:"hidden" }}>
+                    <div style={{ height:"3px", background:"#EDE8DF" }}>
+                      <div style={{ height:"100%", width:`${pctS}%`, background:tc, transition:"width 0.3s", borderRadius:"0 2px 2px 0" }} />
+                    </div>
+                    <div style={{ padding:"16px 20px 12px", borderBottom:"1px solid #F5F0E8" }}>
+                      <div style={{ display:"flex", alignItems:"center", gap:"8px", marginBottom:"8px", flexWrap:"wrap" }}>
+                        <span style={{ fontSize:"10px", fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase", color:tc }}>{session.track}</span>
+                        {checkable.reduce((a,t)=>a+t.m,0)>0 &&
+                          <span style={{ fontSize:"11px", color:"#C4BBB0" }}>· {checkable.reduce((a,t)=>a+t.m,0)} min</span>}
+                        {session.feynman && (
+                          <span style={{ background:`${GOLD}1A`, color:"#A06A10", fontSize:"10px", fontWeight:600, padding:"2px 9px", borderRadius:"20px", letterSpacing:"0.04em" }}>✎ Feynman close</span>
+                        )}
+                        {allDone && (
+                          <span style={{ marginLeft:"auto", background:tc, color:"#fff", fontSize:"10px", fontWeight:700, padding:"2px 10px", borderRadius:"20px", letterSpacing:"0.06em", textTransform:"uppercase" }}>Done ✓</span>
+                        )}
+                      </div>
+                      <p style={{ fontFamily:"'Clash Display',sans-serif", fontSize:"16px", fontWeight:700, color:TEXT, letterSpacing:"-0.02em", lineHeight:1.3 }}>{session.title}</p>
+                    </div>
+                    <div style={{ padding:"2px 20px" }}>
+                      {session.tasks.map((task,ti) => {
+                        const isLabel = task.m===0;
+                        const done = getDone(si,ti);
+                        return (
+                          <div key={ti} onClick={() => !isLabel && toggleTask(si,ti)} style={{
+                            display:"flex", alignItems:"flex-start", gap:"12px", padding:"10px 0",
+                            borderBottom: ti<session.tasks.length-1 ? "1px solid #F7F4EF" : "none",
+                            cursor: isLabel ? "default" : "pointer",
+                            opacity: (!isLabel && done) ? 0.38 : 1, transition:"opacity 0.15s",
+                          }}>
+                            {!isLabel && (
+                              <div style={{
+                                width:"17px", height:"17px", borderRadius:"4px", flexShrink:0, marginTop:"2px",
+                                border: done ? "none" : `1.5px solid ${BORDER}`,
+                                background: done ? tc : "transparent",
+                                display:"flex", alignItems:"center", justifyContent:"center", transition:"all 0.15s",
+                              }}>
+                                {done && <svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3L3 5L7 1" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+                              </div>
+                            )}
+                            <span style={{
+                              flex:1, fontSize:"13px", lineHeight:1.65, fontWeight: isLabel ? 600 : 300,
+                              color: isLabel ? tc : done ? MUTED : TEXT,
+                              textDecoration: (!isLabel && done) ? "line-through" : "none",
+                              textDecorationColor:"#C4BBB0",
+                            }}>{task.t}</span>
+                            {task.m>0 && <span style={{ fontSize:"11px", color:"#C4BBB0", flexShrink:0, paddingTop:"2px" }}>{task.m}m</span>}
+                          </div>
+                        );
+                      })}
+                    </div>
+                    {session.anchor && (
+                      <div style={{ padding:"12px 20px 16px", borderTop:"1px solid #F5F0E8", background:"#FAFAF7" }}>
+                        <p style={{ fontSize:"12px", color:MUTED, lineHeight:1.8, fontStyle:"italic", fontWeight:300, paddingLeft:"12px", borderLeft:`2px solid ${tc}55` }}>
+                          {session.anchor}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+
+              <div style={{ display:"flex", justifyContent:"space-between", paddingTop:"20px", marginTop:"4px", borderTop:`1px solid ${BORDER}` }}>
+                <button onClick={() => {
+                  if(activeWeekIdx>0) setActiveWeekIdx(activeWeekIdx-1);
+                  else if(activePhase>0){ setActivePhase(activePhase-1); setActiveWeekIdx(PHASES[activePhase-1].weeks.length-1); }
+                }} disabled={activePhase===0&&activeWeekIdx===0} style={{
+                  background:SURFACE, border:`1px solid ${BORDER}`, borderRadius:"8px", padding:"9px 20px",
+                  fontSize:"12px", fontWeight:500, color: activePhase===0&&activeWeekIdx===0 ? BORDER : MUTED,
+                  letterSpacing:"0.04em", textTransform:"uppercase",
+                }}>← Prev</button>
+                <button onClick={() => {
+                  if(activeWeekIdx<phase.weeks.length-1) setActiveWeekIdx(activeWeekIdx+1);
+                  else if(activePhase<PHASES.length-1){ setActivePhase(activePhase+1); setActiveWeekIdx(0); }
+                }} disabled={activePhase===PHASES.length-1&&activeWeekIdx===phase.weeks.length-1} style={{
+                  background:accent, border:"none", borderRadius:"8px", padding:"9px 20px",
+                  fontSize:"12px", fontWeight:600, color:"#fff",
+                  letterSpacing:"0.04em", textTransform:"uppercase",
+                }}>Next →</button>
               </div>
             </div>
           </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-            {week.sessions.map((session, si) => (
-              <SessionCard
-                key={si} session={session} accent={accent}
-                completedTasks={Object.fromEntries(session.tasks.map((_, ti) => [ti, getCompleted(si, ti)]))}
-                onToggleTask={(ti) => toggleTask(si, ti)}
-              />
-            ))}
-          </div>
-
-          {/* Nav */}
-          <div style={{
-            display: "flex", justifyContent: "space-between",
-            marginTop: "40px", paddingTop: "24px",
-            borderTop: "1px solid #E5E7EB",
-          }}>
-            <button
-              onClick={() => {
-                if (activeWeekIdx > 0) setActiveWeekIdx(activeWeekIdx - 1);
-                else if (activePhase > 0) { setActivePhase(activePhase - 1); setActiveWeekIdx(PHASES[activePhase - 1].weeks.length - 1); }
-              }}
-              disabled={activePhase === 0 && activeWeekIdx === 0}
-              style={{
-                background: "#FFF", border: "1px solid #E5E7EB",
-                borderRadius: "8px", padding: "10px 22px",
-                fontSize: "13px", fontWeight: 600,
-                color: (activePhase === 0 && activeWeekIdx === 0) ? "#D1D5DB" : "#374151",
-              }}
-            >← Previous</button>
-            <button
-              onClick={() => {
-                if (activeWeekIdx < phase.weeks.length - 1) setActiveWeekIdx(activeWeekIdx + 1);
-                else if (activePhase < PHASES.length - 1) { setActivePhase(activePhase + 1); setActiveWeekIdx(0); }
-              }}
-              disabled={activePhase === PHASES.length - 1 && activeWeekIdx === phase.weeks.length - 1}
-              style={{
-                background: accent, border: "none",
-                borderRadius: "8px", padding: "10px 22px",
-                fontSize: "13px", fontWeight: 700, color: "#FFF",
-              }}
-            >Next Week →</button>
-          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
