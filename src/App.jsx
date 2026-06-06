@@ -26,7 +26,7 @@ const PHASES = [
     weeks: [
       {
         week: 1,
-        theme: "Setup, Community & Your First Real Look",
+        theme: "Mastering the Basics & Training My Eye",
         goal: "Before you design anything, join the communities you'll learn from. Before you code anything, understand what you're looking at. Week 1 is about orientation — done right.",
         sessions: [
           {
