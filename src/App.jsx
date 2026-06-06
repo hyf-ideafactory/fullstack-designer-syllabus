@@ -10,31 +10,31 @@ const PHASES = [
       {
         week: 1,
         theme: "Cultivating My Taste Before Anything Else",
-        goal: "Week 1 is about orienting my whole way of seeing. I'm not starting a curriculum — I'm starting to notice the world like a designer.",
+        goal: "Week 1 is about orienting my whole way of seeing. I'm not starting a curriculum - I'm starting to notice the world like a designer.",
         sessions: [
           {
             track: "Design", duration: "75 min",
-            title: "Establishing My Swipe File",
+            title: "My Swipe File Starts Today",
             tasks: [
-              { t: "Create Swipe File — three folders: Digital, Editorial/Print, Spatial/World. Save 5 pieces in each that genuinely stop you. Not things you think are good. Things that make you feel something.", m: 20 },
+              { t: "Create Swipe File - three folders: Digital, Editorial/Print, Spatial/World. Save 5 pieces in each that genuinely stop you. Not things you think are good. Things that make you feel something.", m: 20 },
               { t: "Set up Read.cv profile. Two sentences about what you're building toward. First public commitment as a designer.", m: 15 },
-              { t: "Go somewhere designed with intention — a museum, gallery, well-designed store or restaurant. Spend 30 minutes with full attention. Photograph it. Write: what 3 specific decisions made it feel the way it did?", m: 40 },
+              { t: "Go somewhere designed with intention - a museum, gallery, well-designed store or restaurant. Spend 30 minutes with full attention. Photograph it. Write: what 3 specific decisions made it feel the way it did?", m: 40 },
             ],
             anchor: "Brodovitch told his students: 'If you look at a page and it doesn't astonish you, throw it away.' Training my eye in the physical world is the fastest way to develop taste that shows up on screen.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Visual Hierarchy — Seeing It Everywhere",
+            title: "Visual Hierarchy - Seeing It Everywhere",
             tasks: [
-              { t: "Open Stripe.com, find a magazine spread, find a room you find beautiful. For each: number every element in the order your eye hits it. Write WHY — size, contrast, position, whitespace, color.", m: 35 },
-              { t: "Sketch the hierarchy of one of those three compositions on paper — rectangles and lines only. No detail, just weight and position.", m: 20 },
+              { t: "Open Stripe.com, find a magazine spread, find a room you find beautiful. For each: number every element in the order your eye hits it. Write WHY - size, contrast, position, whitespace, color.", m: 35 },
+              { t: "Sketch the hierarchy of one of those three compositions on paper - rectangles and lines only. No detail, just weight and position.", m: 20 },
               { t: "FEYNMAN CLOSE: Write 'Visual hierarchy means...' using one digital example and one from the space you visited. Where you get vague, there's a gap. Fix it.", m: 20 },
             ],
-            anchor: "Brodovitch: 'If you look at a page and it doesn't astonish you, throw it away.' Training my eye to recognize — and demand — that astonishment.",
+            anchor: "Brodovitch: 'If you look at a page and it doesn't astonish you, throw it away.' Training my eye to recognize - and demand - that astonishment.",
             feynman: true,
           },
         ],
-        dailyHabit: "Add 1 thing to the Swipe File every day. Notice design everywhere — storefronts, menus, packaging, buildings. Photograph one piece of exceptional physical design per day.",
+        dailyHabit: "Add 1 thing to the Swipe File every day. Notice design everywhere - storefronts, menus, packaging, buildings. Photograph one piece of exceptional physical design per day.",
       },
       {
         week: 2,
@@ -43,27 +43,27 @@ const PHASES = [
         sessions: [
           {
             track: "Design", duration: "75 min",
-            title: "Color as Atmosphere — The Real Lesson",
+            title: "Color as Atmosphere - The Real Lesson",
             tasks: [
               { t: "Watch Josef Albers 'Interaction of Color' intro on YouTube (Yale free excerpts). Write: what surprised you about how color behaves next to other colors?", m: 25 },
-              { t: "Find one interior photograph, one film still, one website with exceptional color. For each: name the 3 dominant colors and the emotional register they create together. Not 'warm' — specific. 'Quiet authority.' 'Anxious luxury.' 'Childhood memory.'", m: 30 },
+              { t: "Find one interior photograph, one film still, one website with exceptional color. For each: name the 3 dominant colors and the emotional register they create together. Not 'warm' - specific. 'Quiet authority.' 'Anxious luxury.' 'Childhood memory.'", m: 30 },
               { t: "In Figma, build a 5-shade scale for one color from scratch. Apply it to a simple rectangle layout. Does it feel like something or just look like something?", m: 20 },
             ],
-            anchor: "Saul Leiter photographed New York in color when everyone else shot black and white — not for novelty, but because color carried emotional information monochrome couldn't. Color communicates. Use it that way.",
+            anchor: "Saul Leiter photographed New York in color when everyone else shot black and white - not for novelty, but because color carried emotional information monochrome couldn't. Color communicates. Use it that way.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Connecting Color to Structure — Then Teaching It Back",
+            title: "Connecting Color to Structure - Then Teaching It Back",
             tasks: [
               { t: "Build a simple HTML page: name as H1, short bio as a paragraph, 3 things you're learning as a list. No CSS yet. Semantic and intentional.", m: 30 },
-              { t: "Create a color palette for this page in Figma — 3 colors max. Ask: what atmosphere would these colors create if they were walls in a room? Write 2 sentences.", m: 20 },
+              { t: "Create a color palette for this page in Figma - 3 colors max. Ask: what atmosphere would these colors create if they were walls in a room? Write 2 sentences.", m: 20 },
               { t: "FEYNMAN CLOSE: Write 'HTML structure matters because...' and 'Color communicates before it is read because...' Ask for one piece of feedback from someone in the Odin Discord.", m: 25 },
             ],
             anchor: "Knuth: 'Let us concentrate on explaining to humans what we want the computer to do.' HTML explains to the browser. Color explains to the human. Both require the same clarity of intention.",
             feynman: true,
           },
         ],
-        dailyHabit: "Notice color in the physical world every day — storefronts, clothing, interiors, packaging. One sentence per day: what does this color combination communicate?",
+        dailyHabit: "Notice color in the physical world every day - storefronts, clothing, interiors, packaging. One sentence per day: what does this color combination communicate?",
       },
       {
         week: 3,
@@ -74,17 +74,17 @@ const PHASES = [
             track: "Design", duration: "75 min",
             title: "Typography as Architecture",
             tasks: [
-              { t: "Read Thinking with Type: Part 1 — Letters (pp. 1–50). Use it like a reference, not a novel — study every diagram. Write 5 principles that surprised you.", m: 30 },
-              { t: "Go to Fonts In Use (fontsinuse.com). Find 3 typographic pairings that feel right. For each: write the emotional personality in one specific sentence. Then find the same pairing used physically — a poster, book, packaging.", m: 25 },
+              { t: "Read Thinking with Type: Part 1 - Letters (pp. 1–50). Use it like a reference, not a novel - study every diagram. Write 5 principles that surprised you.", m: 30 },
+              { t: "Go to Fonts In Use (fontsinuse.com). Find 3 typographic pairings that feel right. For each: write the emotional personality in one specific sentence. Then find the same pairing used physically - a poster, book, packaging.", m: 25 },
               { t: "In Figma, set the same 40-word paragraph in 3 typefaces: geometric sans, humanist sans, serif. One sentence per typeface: what does this voice sound like?", m: 20 },
             ],
-            anchor: "Vignelli used only 6 typefaces his entire career. He knew them the way a musician knows their instrument — in every context, at every size, in every combination. Depth over breadth. Always.",
+            anchor: "Vignelli used only 6 typefaces his entire career. He knew them the way a musician knows their instrument - in every context, at every size, in every combination. Depth over breadth. Always.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Bringing Type Into My Work — Then Teaching It Back",
+            title: "Bringing Type Into My Work - Then Teaching It Back",
             tasks: [
-              { t: "In Figma, design a magazine-style header for your HTML page — headline, subhead, byline. Choose a typeface pairing intentionally. Apply the color palette from Week 2.", m: 35 },
+              { t: "In Figma, design a magazine-style header for your HTML page - headline, subhead, byline. Choose a typeface pairing intentionally. Apply the color palette from Week 2.", m: 35 },
               { t: "Photograph one piece of exceptional physical typography this week. Add to Swipe File. Write one sentence: what does it communicate before you read it?", m: 15 },
               { t: "FEYNMAN CLOSE: Write 'A typeface communicates personality because...' in plain language. Where you get vague, you don't understand it yet.", m: 25 },
             ],
@@ -96,14 +96,14 @@ const PHASES = [
       },
       {
         week: 4,
-        theme: "Refactoring UI — Buying It and Using It Immediately",
+        theme: "Refactoring UI - Buying It and Using It Immediately",
         goal: "Refactoring UI is the most practical design book for where I am right now. I buy it this week and use it the same day.",
         sessions: [
           {
             track: "Design", duration: "75 min",
-            title: "Refactoring UI — Reading and Applying Chapter 1",
+            title: "Refactoring UI - Reading and Applying Chapter 1",
             tasks: [
-              { t: "Buy Refactoring UI — $99 at refactoringui.com, Essentials package. Most important purchase of Phase 1.", m: 0 },
+              { t: "Buy Refactoring UI - $99 at refactoringui.com, Essentials package. Most important purchase of Phase 1.", m: 0 },
               { t: "Read Chapter 1: 'Starting from Scratch.' Read with a pen. Circle every principle, not every tip. A principle generalizes. A tip is situational.", m: 35 },
               { t: "Apply one principle from Chapter 1 to your Figma design from Week 3. Screenshot before and after. Write: what specifically improved and why?", m: 25 },
               { t: "Install Muzli as your Chrome new tab. Design inspiration becomes part of your daily environment.", m: 15 },
@@ -112,17 +112,17 @@ const PHASES = [
           },
           {
             track: "Both", duration: "75 min",
-            title: "Styling My First HTML Page — Then Teaching It Back",
+            title: "Styling My First HTML Page - Then Teaching It Back",
             tasks: [
               { t: "Add CSS to the HTML page from Weeks 2–3. Apply your color palette as CSS custom properties (--color-primary, not hardcoded hex). One source of truth.", m: 40 },
               { t: "Add one piece to each Swipe File section. Write one sentence per piece: what principle from Refactoring UI does this demonstrate?", m: 15 },
               { t: "FEYNMAN CLOSE: Write 'CSS custom properties are better than hardcoded values because...' and 'The cascade in CSS and visual hierarchy in design are related because...'", m: 20 },
             ],
-            anchor: "Maeda: 'Simplicity is about subtracting the obvious and adding the meaningful.' CSS custom properties are that discipline in code — one decision, applied everywhere.",
+            anchor: "Maeda: 'Simplicity is about subtracting the obvious and adding the meaningful.' CSS custom properties are that discipline in code - one decision, applied everywhere.",
             feynman: true,
           },
         ],
-        dailyHabit: "Keep working through Odin daily — even 20 minutes on non-session days moves the needle. Nine sections total. Treat each section as a milestone.",
+        dailyHabit: "Keep working through Odin daily - even 20 minutes on non-session days moves the needle. Nine sections total. Treat each section as a milestone.",
       },
       {
         week: 5,
@@ -133,29 +133,29 @@ const PHASES = [
             track: "Design", duration: "75 min",
             title: "Studying Composition Across Photography, Editorial, and Space",
             tasks: [
-              { t: "Choose one photographer to study: Irving Penn, Saul Leiter, Gordon Parks, or Viviane Sassen. Find 10 images. For each: identify the single compositional decision that makes it work — leading line, negative space, depth of field, color relationship, subject placement.", m: 35 },
+              { t: "Choose one photographer to study: Irving Penn, Saul Leiter, Gordon Parks, or Viviane Sassen. Find 10 images. For each: identify the single compositional decision that makes it work - leading line, negative space, depth of field, color relationship, subject placement.", m: 35 },
               { t: "Find the same compositional intelligence in 2 editorial spreads and 2 interior photographs. Where does the same logic appear across different media?", m: 25 },
               { t: "Add the best 5 to the Swipe File (Spatial/World section). One sentence per piece: what is the compositional decision?", m: 15 },
             ],
-            anchor: "Irving Penn: 'A photograph is not an accident — it is a concept.' Every layout decision should be a concept, not an accident. I study photographers to build that habit.",
+            anchor: "Irving Penn: 'A photograph is not an accident - it is a concept.' Every layout decision should be a concept, not an accident. I study photographers to build that habit.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Translating a Photograph's Composition Into a Layout — Then Teaching It Back",
+            title: "Translating a Photograph's Composition Into a Layout - Then Teaching It Back",
             tasks: [
-              { t: "Take one photograph from the composition study and translate its spatial logic into a Figma layout — same proportional relationships, same balance of density and space, same light/dark ratio. Screenshot both side by side.", m: 40 },
+              { t: "Take one photograph from the composition study and translate its spatial logic into a Figma layout - same proportional relationships, same balance of density and space, same light/dark ratio. Screenshot both side by side.", m: 40 },
               { t: "Push the Odin Recipes Project to GitHub. First public code doesn't have to be perfect. It has to exist.", m: 10 },
               { t: "FEYNMAN CLOSE: Write 'Compositional intelligence means...' using one photographic example and one layout example. Where are they identical? Where do they diverge?", m: 25 },
             ],
-            anchor: "Feynman: 'What I cannot create, I do not understand.' I can't yet build a beautiful layout from scratch — but I can trace the logic of one that exists. That tracing is my current level of understanding. It is enough.",
+            anchor: "Feynman: 'What I cannot create, I do not understand.' I can't yet build a beautiful layout from scratch - but I can trace the logic of one that exists. That tracing is my current level of understanding. It is enough.",
             feynman: true,
           },
         ],
-        dailyHabit: "Keep working on the Odin Recipes Project on non-session days. The project is where Odin actually teaches — the lessons are preparation.",
+        dailyHabit: "Keep working on the Odin Recipes Project on non-session days. The project is where Odin actually teaches - the lessons are preparation.",
       },
       {
         week: 6,
-        theme: "The Grid — Invisible Architecture of Everything",
+        theme: "The Grid - Invisible Architecture of Everything",
         goal: "The grid was invented for print. It migrated to screen. It lives in space. Learn it once and you can lay out anything.",
         sessions: [
           {
@@ -170,40 +170,40 @@ const PHASES = [
           },
           {
             track: "Both", duration: "75 min",
-            title: "Applying a Grid to My Figma Design — Then Teaching It Back",
+            title: "Applying a Grid to My Figma Design - Then Teaching It Back",
             tasks: [
-              { t: "Apply a grid to your Figma design from Week 3: columns, gutters, margins — on paper first, then in Figma. What does imposing a grid reveal about your current layout?", m: 30 },
-              { t: "Sketch the same compositional logic as a room layout — same proportional relationships. What furniture arrangement would create the same visual rhythm as your digital layout?", m: 20 },
+              { t: "Apply a grid to your Figma design from Week 3: columns, gutters, margins - on paper first, then in Figma. What does imposing a grid reveal about your current layout?", m: 30 },
+              { t: "Sketch the same compositional logic as a room layout - same proportional relationships. What furniture arrangement would create the same visual rhythm as your digital layout?", m: 20 },
               { t: "FEYNMAN CLOSE: Write 'Grid systems in design work because...' and 'The spatial logic that connects a layout, a room, and a photograph is...'", m: 25 },
             ],
             anchor: "Knuth: every layout decision should be provable. You should be able to state why every element occupies the space it does. The grid makes this possible.",
             feynman: true,
           },
         ],
-        dailyHabit: "Complete Flexbox Froggy on off-days — all 24 levels. Understand every answer before advancing.",
+        dailyHabit: "Complete Flexbox Froggy on off-days - all 24 levels. Understand every answer before advancing.",
       },
       {
         week: 7,
-        theme: "My First Real Design — With a Point of View",
-        goal: "This week I ship a landing page with the visual conviction of a great magazine cover. Not a site that looks like a site — a designed thing.",
+        theme: "My First Real Design - With a Point of View",
+        goal: "This week I ship a landing page with the visual conviction of a great magazine cover. Not a site that looks like a site - a designed thing.",
         sessions: [
           {
             track: "Design", duration: "75 min",
-            title: "Designing With Conviction — Reference From Outside the Web",
+            title: "Designing With Conviction - Reference From Outside the Web",
             tasks: [
-              { t: "Choose your concept. Before opening Figma: find your reference in the physical world — a magazine spread, a film still, a room, a photograph. The feeling you want your landing page to have must come from somewhere real.", m: 15 },
-              { t: "Sketch 3 layout directions informed by that reference. Each should feel like it comes from the same world as the reference material — not a generic website.", m: 30 },
-              { t: "Build the full high-fidelity Figma design. Every decision — type, color, spacing — traceable back to the feeling of your physical reference.", m: 30 },
+              { t: "Choose your concept. Before opening Figma: find your reference in the physical world - a magazine spread, a film still, a room, a photograph. The feeling you want your landing page to have must come from somewhere real.", m: 15 },
+              { t: "Sketch 3 layout directions informed by that reference. Each should feel like it comes from the same world as the reference material - not a generic website.", m: 30 },
+              { t: "Build the full high-fidelity Figma design. Every decision - type, color, spacing - traceable back to the feeling of your physical reference.", m: 30 },
             ],
             anchor: "The best set designers build rooms that feel like they could exist because every object was chosen with specificity. That specificity is what separates work with a point of view from work that merely functions.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Building It, Pushing It, Documenting It — Then Teaching It Back",
+            title: "Building It, Pushing It, Documenting It - Then Teaching It Back",
             tasks: [
               { t: "Build the landing page in HTML and CSS. Semantic structure first, CSS custom properties, then styling. Screenshot Figma design and built version side by side.", m: 45 },
               { t: "Push to GitHub. Write a README describing the concept and physical reference used. This is the first portfolio entry.", m: 15 },
-              { t: "FEYNMAN CLOSE — Case Study: Write 200 words: the physical reference chosen, the 3 most important design decisions it inspired, what worked, what didn't, what you'd change.", m: 20 },
+              { t: "FEYNMAN CLOSE - Case Study: Write 200 words: the physical reference chosen, the 3 most important design decisions it inspired, what worked, what didn't, what you'd change.", m: 20 },
             ],
             anchor: "Vignelli: 'The public is more familiar with bad design than good design. It is, in effect, conditioned to prefer bad design.' Shipping something with a genuine point of view is an act of defiance.",
             feynman: true,
@@ -220,36 +220,36 @@ const PHASES = [
             track: "Design", duration: "75 min",
             title: "Studying a Photographer Whose Compositional Instinct I Want to Absorb",
             tasks: [
-              { t: "Study one photographer in depth: Saul Leiter, Irving Penn, Gordon Parks, Viviane Sassen, or Alec Soth. Find 10 images. For each: identify the one compositional decision that defines it — leading lines, negative space, depth of field, color relationship.", m: 35 },
+              { t: "Study one photographer in depth: Saul Leiter, Irving Penn, Gordon Parks, Viviane Sassen, or Alec Soth. Find 10 images. For each: identify the one compositional decision that defines it - leading lines, negative space, depth of field, color relationship.", m: 35 },
               { t: "Find the equivalent compositional intelligence in 2 editorial spreads and 2 interior photographs. Same logic, different medium.", m: 25 },
               { t: "Go to Art of the Title (artofthetitle.com). Find 2 film title sequences that move you. Write: what does the typography communicate about the world you're about to enter?", m: 15 },
             ],
-            anchor: "Irving Penn: 'A photograph is not an accident — it is a concept.' Building the habit of treating every frame — every layout — as a concept, not a default.",
+            anchor: "Irving Penn: 'A photograph is not an accident - it is a concept.' Building the habit of treating every frame - every layout - as a concept, not a default.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Translating Cinematic Thinking Into Layout — Then Teaching It Back",
+            title: "Translating Cinematic Thinking Into Layout - Then Teaching It Back",
             tasks: [
               { t: "Take one photograph from the composition study and translate its spatial logic into a new Figma layout. Screenshot both side by side. What holds across the translation? What gets lost?", m: 35 },
               { t: "Watch the opening 5 minutes of a film by Wes Anderson, Wong Kar-wai, or Barry Jenkins. Write: how does camera movement and editing pace create an emotional state before any dialogue?", m: 20 },
               { t: "FEYNMAN CLOSE: Write 'Compositional intelligence means...' using one photographic example, one editorial example, and one spatial example.", m: 20 },
             ],
-            anchor: "Brodovitch at Harper's Bazaar treated every spread like a stage — with blocking, tension, rhythm, and rest. A magazine spread and a CSS layout are the same choreographic challenge.",
+            anchor: "Brodovitch at Harper's Bazaar treated every spread like a stage - with blocking, tension, rhythm, and rest. A magazine spread and a CSS layout are the same choreographic challenge.",
             feynman: true,
           },
         ],
-        dailyHabit: "Take or find 10 photographs this week — compose, don't document. Add the best 3 to the Swipe File with one sentence each.",
+        dailyHabit: "Take or find 10 photographs this week - compose, don't document. Add the best 3 to the Swipe File with one sentence each.",
       },
       {
         week: 9,
         theme: "Mastering Figma and Studying Who Built Real Visual Worlds",
-        goal: "Figma fluency means thinking speed. This week I also study one practitioner who built a world — not just a style.",
+        goal: "Figma fluency means thinking speed. This week I also study one practitioner who built a world - not just a style.",
         sessions: [
           {
             track: "Design", duration: "75 min",
             title: "Building Components and Studying a Practitioner Who Built a Visual World",
             tasks: [
-              { t: "Complete Figma's official Components tutorial. Build each concept immediately — watching without building is not learning.", m: 30 },
+              { t: "Complete Figma's official Components tutorial. Build each concept immediately - watching without building is not learning.", m: 30 },
               { t: "Build a button component with 4 states: default, hover, focus, disabled. Write why each state looks the way it does.", m: 25 },
               { t: "Choose one practitioner who creates a coherent visual world: Wes Anderson, Aesop, or Kinfolk. Write one page: what are the 5 decisions that make their world coherent?", m: 20 },
             ],
@@ -257,39 +257,39 @@ const PHASES = [
           },
           {
             track: "Both", duration: "75 min",
-            title: "Applying What I Studied to My Own Work — Then Teaching It Back",
+            title: "Applying What I Studied to My Own Work - Then Teaching It Back",
             tasks: [
-              { t: "Apply the practitioner's lens to your own Figma work: what are the 3 core decisions that define your developing visual world? Type choice, color palette, spatial rhythm — write them explicitly.", m: 30 },
-              { t: "Add 5 pieces to the Swipe File that represent coherent visual worlds — not just beautiful individual pieces. There is a difference.", m: 15 },
+              { t: "Apply the practitioner's lens to your own Figma work: what are the 3 core decisions that define your developing visual world? Type choice, color palette, spatial rhythm - write them explicitly.", m: 30 },
+              { t: "Add 5 pieces to the Swipe File that represent coherent visual worlds - not just beautiful individual pieces. There is a difference.", m: 15 },
               { t: "FEYNMAN CLOSE: Write 'A Figma component is...' and 'A coherent visual world differs from a visual style because...' Then: what is the one decision in your practitioner's work you want to internalize?", m: 30 },
             ],
             anchor: "Wes Anderson's films are production design, costume, typography, and color working as one intelligence. Every touchpoint speaks the same language. That is my standard.",
             feynman: true,
           },
         ],
-        dailyHabit: "Work through Odin JS daily. JS is hard. Consistency beats intensity — 20 minutes on off-days is better than missing a week cold.",
+        dailyHabit: "Work through Odin JS daily. JS is hard. Consistency beats intensity - 20 minutes on off-days is better than missing a week cold.",
       },
       {
         week: 10,
-        theme: "Design Psychology — Why Humans Do What They Do",
+        theme: "Design Psychology - Why Humans Do What They Do",
         goal: "Exceptional designers are applied psychologists. You can't design for humans without understanding how humans perceive, decide, and err.",
         sessions: [
           {
             track: "Design", duration: "75 min",
             title: "Revisiting Norman With Fresh Eyes and More Experience",
             tasks: [
-              { t: "Reread The Design of Everyday Things: Chapter 1 — you now have 9 weeks of practice behind you. Write: what do you understand now that you didn't the first time?", m: 25 },
+              { t: "Reread The Design of Everyday Things: Chapter 1 - you now have 9 weeks of practice behind you. Write: what do you understand now that you didn't the first time?", m: 25 },
               { t: "Find 3 physical objects nearby that violate Norman's principles. Photograph them. For each: name the specific principle violated and sketch a redesign that fixes it.", m: 30 },
-              { t: "Find the digital equivalent of each physical failure — a confusing form, a hidden action, a missing feedback state. Same principle, different medium.", m: 20 },
+              { t: "Find the digital equivalent of each physical failure - a confusing form, a hidden action, a missing feedback state. Same principle, different medium.", m: 20 },
             ],
-            anchor: "Norman: 'Good design fits our needs so well that the design is invisible.' This is equally true for a checkout flow and a museum corridor. The goal — making experience feel inevitable — never changes.",
+            anchor: "Norman: 'Good design fits our needs so well that the design is invisible.' This is equally true for a checkout flow and a museum corridor. The goal - making experience feel inevitable - never changes.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Auditing My Own Work Through Norman's Lens — Then Teaching It Back",
+            title: "Auditing My Own Work Through Norman's Lens - Then Teaching It Back",
             tasks: [
               { t: "Audit the Week 7 landing page with Norman's lens: affordances, signifiers, feedback, mapping. Find 3 violations and fix them. Screenshot before and after.", m: 35 },
-              { t: "Visit a designed space — museum, gallery, boutique, restaurant. Apply Norman's lens. Write: what one change would most improve the experience?", m: 25 },
+              { t: "Visit a designed space - museum, gallery, boutique, restaurant. Apply Norman's lens. Write: what one change would most improve the experience?", m: 25 },
               { t: "FEYNMAN CLOSE: Write 'An affordance is...' using one digital and one physical example. Then: 'The principle connecting good digital and good physical design is...'", m: 15 },
             ],
             anchor: "Rams: 'You cannot understand good design if you do not understand people.' People are the constant. Every medium is just a different way of designing for them.",
@@ -300,7 +300,7 @@ const PHASES = [
       },
       {
         week: 11,
-        theme: "Building My Visual World — Not Just a Visual Style",
+        theme: "Building My Visual World - Not Just a Visual Style",
         goal: "A style is a collection of aesthetic choices. A visual world is a complete point of view. This week I start articulating mine.",
         sessions: [
           {
@@ -315,10 +315,10 @@ const PHASES = [
           },
           {
             track: "Both", duration: "75 min",
-            title: "Applying My Tokens to Real Code — Then Teaching It Back",
+            title: "Applying My Tokens to Real Code - Then Teaching It Back",
             tasks: [
               { t: "Export Figma tokens as CSS custom properties. Apply them to the landing page CSS. Every color and spacing value comes from a variable. Prove the system works.", m: 35 },
-              { t: "Write: what are the 3 core visual decisions that define your developing aesthetic? Type choice, color, spatial rhythm — explicitly and specifically.", m: 20 },
+              { t: "Write: what are the 3 core visual decisions that define your developing aesthetic? Type choice, color, spatial rhythm - explicitly and specifically.", m: 20 },
               { t: "FEYNMAN CLOSE: Write 'A design token is...' and 'A visual world differs from a visual style because...'", m: 20 },
             ],
             anchor: "Rand: 'Art is an idea that has found its perfect visual expression.' My idea is forming. I can feel it in what I save, what I notice, what makes me stop. Phase 2 is where I give it more precise expression.",
@@ -329,26 +329,26 @@ const PHASES = [
       },
       {
         week: 12,
-        theme: "My Phase 1 Retrospective — Honest, Specific, Without Ego",
+        theme: "My Phase 1 Retrospective - Honest, Specific, Without Ego",
         goal: "Reflection is not optional. The designers who grow fastest review their own work with more rigor than anyone else will.",
         sessions: [
           {
             track: "Design", duration: "75 min",
             title: "Scrolling My Swipe File and Naming My Aesthetic",
             tasks: [
-              { t: "Scroll the entire Swipe File — all three sections. What patterns appear? What do you save regardless of medium? Write 5 words that describe your developing aesthetic. Not aspirational — honest.", m: 25 },
+              { t: "Scroll the entire Swipe File - all three sections. What patterns appear? What do you save regardless of medium? Write 5 words that describe your developing aesthetic. Not aspirational - honest.", m: 25 },
               { t: "Write 400 words: 'My visual world at Week 12.' What do you see now that you couldn't in Week 1? What still confuses you? What has become obvious? What kind of environments and images do you want to design?", m: 35 },
               { t: "Identify one practitioner whose career trajectory you want to study in depth in Phase 2. Write: why them?", m: 15 },
             ],
-            anchor: "Rand: 'Art is an idea that has found its perfect visual expression.' My idea is forming. Phase 2 is where I begin to find its perfect expression — on screen, on page, in space.",
+            anchor: "Rand: 'Art is an idea that has found its perfect visual expression.' My idea is forming. Phase 2 is where I begin to find its perfect expression - on screen, on page, in space.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Setting Phase 2 Intentions — The Phase 1 Feynman Close",
+            title: "Setting Phase 2 Intentions - The Phase 1 Feynman Close",
             tasks: [
-              { t: "Write 3 specific, behavioral things you'll do differently in Phase 2. Not 'be more consistent' — 'Post work publicly before it feels ready, starting Week 13.'", m: 20 },
+              { t: "Write 3 specific, behavioral things you'll do differently in Phase 2. Not 'be more consistent' - 'Post work publicly before it feels ready, starting Week 13.'", m: 20 },
               { t: "Set up portfolio: Vite project, deploy to Vercel. URL exists before Phase 2 begins. Empty is fine. It must exist.", m: 30 },
-              { t: "PHASE 1 FEYNMAN CLOSE: Write one page. 'What kind of designer am I becoming — on screen, on page, in the world? And what do I still not understand?' Honest. Keep it. The answer will change.", m: 25 },
+              { t: "PHASE 1 FEYNMAN CLOSE: Write one page. 'What kind of designer am I becoming - on screen, on page, in the world? And what do I still not understand?' Honest. Keep it. The answer will change.", m: 25 },
             ],
             anchor: "Feynman at the end of his life: 'What I cannot create, I do not understand.' Phase 1 taught me to create the foundations. Phase 2 is where I begin to understand what they make possible.",
             feynman: true,
@@ -366,32 +366,32 @@ const PHASES = [
     weeks: [
       {
         week: 13,
-        theme: "React and Going Somewhere Beautiful — Every Single Week",
-        goal: "React is my primary digital building material. Spatial thinking and editorial study are my analog building materials. I develop both in parallel — they sharpen each other.",
+        theme: "React and Going Somewhere Beautiful - Every Single Week",
+        goal: "React is my primary digital building material. Spatial thinking and editorial study are my analog building materials. I develop both in parallel - they sharpen each other.",
         sessions: [
           {
             track: "Design", duration: "75 min",
             title: "A Designed Space, Visited With Full Intention",
             tasks: [
               { t: "Visit a museum, gallery, boutique, hotel lobby, or restaurant you consider well-designed. Spend 30 min with full attention. Photograph it. Write: what 5 specific design decisions define the experience? Light, material, spatial sequence, scale, color?", m: 40 },
-              { t: "Start DesignCode.io React course (designcode.io, ~$99/year) — Lessons 1–2. Note every place a Figma decision maps directly to a React decision.", m: 20 },
-              { t: "Post your spatial analysis somewhere — Read.cv or your design journal. Making observations public sharpens them.", m: 15 },
+              { t: "Start DesignCode.io React course (designcode.io, ~$99/year) - Lessons 1–2. Note every place a Figma decision maps directly to a React decision.", m: 20 },
+              { t: "Post your spatial analysis somewhere - Read.cv or your design journal. Making observations public sharpens them.", m: 15 },
             ],
-            anchor: "Ilse Crawford spends months observing a space before designing it — watching how people move, where they linger, what light does at different hours. That depth of observation produces work that feels inevitable rather than imposed.",
+            anchor: "Ilse Crawford spends months observing a space before designing it - watching how people move, where they linger, what light does at different hours. That depth of observation produces work that feels inevitable rather than imposed.",
           },
           {
             track: "Both", duration: "75 min",
-            title: "Building React and Connecting It to What I Observed — Then Teaching It Back",
+            title: "Building React and Connecting It to What I Observed - Then Teaching It Back",
             tasks: [
               { t: "Scaffold a Vite + React project. Convert the Phase 1 landing page into React components: Nav, Hero, Card, Footer. Each in its own file.", m: 40 },
-              { t: "Take one observation from the spatial visit — a proportion, a color relationship, a spatial rhythm — and translate it into a design decision for the landing page.", m: 20 },
+              { t: "Take one observation from the spatial visit - a proportion, a color relationship, a spatial rhythm - and translate it into a design decision for the landing page.", m: 20 },
               { t: "FEYNMAN CLOSE: Write 'React components differ from HTML elements in that...' and 'Observing a designed space teaches a digital designer...'", m: 15 },
             ],
-            anchor: "The designers who move fluidly between media never stop studying — in galleries, restaurants, books, theaters. The screen is one surface. Everything else sharpens the eye for it.",
+            anchor: "The designers who move fluidly between media never stop studying - in galleries, restaurants, books, theaters. The screen is one surface. Everything else sharpens the eye for it.",
             feynman: true,
           },
         ],
-        dailyHabit: "Keep working through Odin JS on non-session days. Don't abandon Odin for React — both are required.",
+        dailyHabit: "Keep working through Odin JS on non-session days. Don't abandon Odin for React - both are required.",
       },
     ],
   },
@@ -403,14 +403,14 @@ const PHASES = [
     weeks: [
       {
         week: 29,
-        theme: "A Design System — Not Just a Component Library",
+        theme: "A Design System - Not Just a Component Library",
         goal: "A design system is a set of decisions, made once, that scale across every surface a product touches. I build toward that.",
         sessions: [
           {
             track: "Design", duration: "75 min",
-            title: "Thinking in Atoms, Molecules, and Organisms — Across Every Medium",
+            title: "Thinking in Atoms, Molecules, and Organisms - Across Every Medium",
             tasks: [
-              { t: "Read Brad Frost's Atomic Design: Chapters 1–2 (free at bradfrost.com). For each level — atom, molecule, organism — find examples in a digital product AND a physical design system (modular furniture line, packaging family, wayfinding system).", m: 35 },
+              { t: "Read Brad Frost's Atomic Design: Chapters 1–2 (free at bradfrost.com). For each level - atom, molecule, organism - find examples in a digital product AND a physical design system (modular furniture line, packaging family, wayfinding system).", m: 35 },
               { t: "Audit Figma files AND the Swipe File. What visual decisions appear consistently across digital, editorial, and spatial categories? Those are the atoms of your personal design language.", m: 25 },
               { t: "Write the one-page 'Visual World Document': typefaces, color palette, spatial references, photographic references, emotional register. Design system for every medium.", m: 15 },
             ],
@@ -418,13 +418,13 @@ const PHASES = [
           },
           {
             track: "Both", duration: "75 min",
-            title: "Token Parity Between Figma and CSS — Then Teaching It Back",
+            title: "Token Parity Between Figma and CSS - Then Teaching It Back",
             tasks: [
-              { t: "Define the complete token set in Figma Variables AND CSS custom properties. Color, spacing, type scale. Every token named semantically. Open both side by side — every Figma token has an exact CSS counterpart.", m: 40 },
+              { t: "Define the complete token set in Figma Variables AND CSS custom properties. Color, spacing, type scale. Every token named semantically. Open both side by side - every Figma token has an exact CSS counterpart.", m: 40 },
               { t: "Install Storybook in the React project. Write stories for Button (4 states), Card (3 variants), Input (default, error, disabled).", m: 20 },
               { t: "FEYNMAN CLOSE: Write 'Design tokens work across a system because...' and 'A design system differs from a stylesheet because...'", m: 15 },
             ],
-            anchor: "Rams: 'Good design is thorough down to the last detail.' Token parity is that thoroughness — the spec and the code tell the same story.",
+            anchor: "Rams: 'Good design is thorough down to the last detail.' Token parity is that thoroughness - the spec and the code tell the same story.",
             feynman: true,
           },
         ],
@@ -436,20 +436,20 @@ const PHASES = [
     id: 3, label: "Phase 4", title: "Ship & Specialize",
     subtitle: "Ongoing · Build publicly, develop a point of view",
     color: "#FFF8F0", accent: "#FF6600", darkAccent: "#CC4400",
-    tagline: "Building publicly. Finding my medium — or refusing to choose. The best designers never did.",
+    tagline: "Building publicly. Finding my medium - or refusing to choose. The best designers never did.",
     weeks: [
       {
         week: 41,
-        theme: "My Portfolio — And It Has a Point of View",
+        theme: "My Portfolio - And It Has a Point of View",
         goal: "My portfolio communicates a point of view before anyone reads a project title. The analog demand is growing. I show work that lives on screen AND in the world.",
         sessions: [
           {
             track: "Design", duration: "75 min",
-            title: "Designing My Portfolio as a Visual World — Not a Project List",
+            title: "Designing My Portfolio as a Visual World - Not a Project List",
             tasks: [
               { t: "Study three cross-medium portfolios: Pentagram (pentagram.com), 2x4 (2x4.org), or Sagmeister & Walsh. Write: how does each communicate a point of view before you read a single project description?", m: 30 },
               { t: "Inventory your work: digital projects, editorial experiments, spatial studies, photographs. The portfolio needs at least one project that shows your point of view across more than one medium.", m: 25 },
-              { t: "Write your bio. Read it out loud. Does it sound like a person with something to say — or a resume? Rewrite until it sounds like you.", m: 20 },
+              { t: "Write your bio. Read it out loud. Does it sound like a person with something to say - or a resume? Rewrite until it sounds like you.", m: 20 },
             ],
             anchor: "Rand: 'Don't try to be original. Just try to be good.' Good means: a coherent point of view, expressed with precision and conviction, in every medium you choose to work in.",
           },
@@ -459,7 +459,7 @@ const PHASES = [
             tasks: [
               { t: "Write the case study for your strongest Phase 1 project: the visual world you were building toward, the 3 most important decisions, what you built, what the work taught you about your point of view. 400 words minimum.", m: 35 },
               { t: "Name your specialization direction: set design, interior, editorial, photography, digital product, or the designer who refuses to specialize. Write: why this? What work points toward it?", m: 20 },
-              { t: "FINAL FEYNMAN CLOSE: Write 'What kind of designer am I, and what do I have to say that no one else is saying — in any medium?' Answer honestly. This is not the last time you'll answer it.", m: 20 },
+              { t: "FINAL FEYNMAN CLOSE: Write 'What kind of designer am I, and what do I have to say that no one else is saying - in any medium?' Answer honestly. This is not the last time you'll answer it.", m: 20 },
             ],
             anchor: "Feynman: 'Study hard what interests you the most in the most undisciplined, irreverent and original manner possible.' Not becoming a good designer. Becoming someone who changes what good means.",
             feynman: true,
@@ -671,7 +671,7 @@ export default function App() {
           <div style={{width:"8px",height:"8px",borderRadius:"50%",background:accent,boxShadow:`0 0 0 3px ${accent}33`}}/>
           <span style={{fontFamily:"'Clash Display',sans-serif",fontSize:"13px",fontWeight:700,color:TEXT,letterSpacing:"0.05em",textTransform:"uppercase"}}>Full Stack Designer</span>
         </div>
-        {[{key:"syllabus",label:"Syllabus"},{key:"odin",label:`Odin — ${odinDone}/${odinTotal}`}].map(({key,label})=>(
+        {[{key:"syllabus",label:"Syllabus"},{key:"odin",label:`Odin - ${odinDone}/${odinTotal}`}].map(({key,label})=>(
           <button key={key} onClick={()=>setTab(key)} style={{
             background:"none",border:"none",padding:"0 20px",height:"49px",
             fontSize:"12px",fontWeight:tab===key?600:400,
@@ -772,14 +772,14 @@ export default function App() {
           </div>
 
           <div style={{flex:1,overflowY:"auto",background:"#F0EDE5"}}>
-            <div style={{background:HERO,padding:"36px 48px",position:"relative",overflow:"hidden"}}>
+            <div style={{background:HERO,padding:"36px 48px",position:"relative",overflow:"hidden",textAlign:"center"}}>
               <div style={{position:"absolute",right:"-60px",bottom:"-60px",width:"240px",height:"240px",borderRadius:"50%",background:`${accent}18`,pointerEvents:"none"}}/>
               <div style={{display:"flex",alignItems:"center",gap:"8px",marginBottom:"14px"}}>
                 <div style={{width:"7px",height:"7px",borderRadius:"50%",background:GOLD,boxShadow:`0 0 0 3px ${GOLD}33`}}/>
                 <span style={{fontSize:"11px",fontWeight:600,letterSpacing:"0.1em",textTransform:"uppercase",color:"#4E8494"}}>{phase.label} · Week {week.week}</span>
               </div>
               <h2 style={{fontFamily:"'Clash Display',sans-serif",fontSize:"clamp(22px,3vw,38px)",fontWeight:700,color:"#fff",letterSpacing:"-0.03em",lineHeight:1.15,marginBottom:"14px"}}>{week.theme}</h2>
-              <p style={{fontSize:"14px",color:"#4E8494",lineHeight:1.8,maxWidth:"520px",fontWeight:300,textAlign:"left"}}>{week.goal}</p>
+              <p style={{fontSize:"14px",color:"#4E8494",lineHeight:1.8,maxWidth:"520px",fontWeight:300,textAlign:"center",margin:"0 auto"}}>{week.goal}</p>
             </div>
 
             <div style={{padding:"28px 48px",display:"flex",flexDirection:"column",gap:"12px"}}>
