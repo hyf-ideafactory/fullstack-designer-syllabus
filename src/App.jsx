@@ -14,7 +14,7 @@ const PHASES = [
         sessions: [
           {
             track: "Design", duration: "75 min",
-            title: "My Swipe File Starts Today",
+            title: "Establishing My Swipe File",
             tasks: [
               { t: "Create Swipe File — three folders: Digital, Editorial/Print, Spatial/World. Save 5 pieces in each that genuinely stop you. Not things you think are good. Things that make you feel something.", m: 20 },
               { t: "Set up Read.cv profile. Two sentences about what you're building toward. First public commitment as a designer.", m: 15 },
@@ -652,7 +652,7 @@ export default function App() {
   const getDone=(si,ti)=>!!completed[`p${activePhase}-w${activeWeekIdx}-s${si}-t${ti}`];
 
   return (
-    <div style={{minHeight:"100vh",background:"#F0EDE5",fontFamily:"'Inter','Helvetica Neue',sans-serif",color:TEXT}}>
+    <div style={{minHeight:"100vh",background:"#F0EDE5",fontFamily:"'Inter','Helvetica Neue',sans-serif",color:TEXT,textAlign:"left"}}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
         @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
@@ -779,14 +779,14 @@ export default function App() {
                 <span style={{fontSize:"11px",fontWeight:600,letterSpacing:"0.1em",textTransform:"uppercase",color:"#4E8494"}}>{phase.label} · Week {week.week}</span>
               </div>
               <h2 style={{fontFamily:"'Clash Display',sans-serif",fontSize:"clamp(22px,3vw,38px)",fontWeight:700,color:"#fff",letterSpacing:"-0.03em",lineHeight:1.15,marginBottom:"14px"}}>{week.theme}</h2>
-              <p style={{fontSize:"14px",color:"#4E8494",lineHeight:1.8,maxWidth:"520px",fontWeight:300}}>{week.goal}</p>
+              <p style={{fontSize:"14px",color:"#4E8494",lineHeight:1.8,maxWidth:"520px",fontWeight:300,textAlign:"left"}}>{week.goal}</p>
             </div>
 
             <div style={{padding:"28px 48px",display:"flex",flexDirection:"column",gap:"12px"}}>
               {week.dailyHabit&&(
                 <div style={{background:SURFACE,border:`1px solid ${BORDER}`,borderLeft:`4px solid ${GOLD}`,borderRadius:"0 10px 10px 0",padding:"14px 18px"}}>
                   <div style={{fontSize:"10px",fontWeight:600,letterSpacing:"0.1em",textTransform:"uppercase",color:GOLD,marginBottom:"5px"}}>Daily habit</div>
-                  <p style={{fontSize:"13px",color:MUTED,lineHeight:1.7,fontWeight:300}}>{week.dailyHabit}</p>
+                  <p style={{fontSize:"13px",color:MUTED,lineHeight:1.7,fontWeight:300,textAlign:"left"}}>{week.dailyHabit}</p>
                 </div>
               )}
 
@@ -808,7 +808,7 @@ export default function App() {
                         {session.feynman&&<span style={{background:`${GOLD}1A`,color:"#A06A10",fontSize:"10px",fontWeight:600,padding:"2px 9px",borderRadius:"20px",letterSpacing:"0.04em"}}>✎ Feynman close</span>}
                         {allDone&&<span style={{marginLeft:"auto",background:tc,color:"#fff",fontSize:"10px",fontWeight:700,padding:"2px 10px",borderRadius:"20px",letterSpacing:"0.06em",textTransform:"uppercase"}}>Done ✦</span>}
                       </div>
-                      <p style={{fontFamily:"'Clash Display',sans-serif",fontSize:"16px",fontWeight:700,color:TEXT,letterSpacing:"-0.02em",lineHeight:1.3}}>{session.title}</p>
+                      <p style={{fontFamily:"'Clash Display',sans-serif",fontSize:"16px",fontWeight:700,color:TEXT,letterSpacing:"-0.02em",lineHeight:1.3,textAlign:"left"}}>{session.title}</p>
                     </div>
                     <div style={{padding:"2px 20px"}}>
                       {session.tasks.map((task,ti)=>{
@@ -834,7 +834,7 @@ export default function App() {
                                 {done&&<svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3L3 5L7 1" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
                               </div>
                             )}
-                            <span style={{flex:1,fontSize:"13px",lineHeight:1.65,fontWeight:isLabel?600:300,color:isLabel?tc:done?MUTED:TEXT,textDecoration:(!isLabel&&done)?"line-through":"none",textDecorationColor:"#C4BBB0"}}>{task.t}</span>
+                            <span style={{flex:1,fontSize:"13px",lineHeight:1.65,fontWeight:isLabel?600:300,color:isLabel?tc:done?MUTED:TEXT,textDecoration:(!isLabel&&done)?"line-through":"none",textDecorationColor:"#C4BBB0",textAlign:"left"}}>{task.t}</span>
                             {task.m>0&&<span style={{fontSize:"11px",color:"#C4BBB0",flexShrink:0,paddingTop:"2px"}}>{task.m}m</span>}
                           </div>
                         );
@@ -842,7 +842,7 @@ export default function App() {
                     </div>
                     {session.anchor&&(
                       <div style={{padding:"12px 20px 16px",borderTop:"1px solid #F5F0E8",background:"#FAFAF7"}}>
-                        <p style={{fontSize:"12px",color:MUTED,lineHeight:1.8,fontStyle:"italic",fontWeight:300,paddingLeft:"12px",borderLeft:`2px solid ${tc}55`}}>{session.anchor}</p>
+                        <p style={{fontSize:"12px",color:MUTED,lineHeight:1.8,fontStyle:"italic",fontWeight:300,paddingLeft:"12px",borderLeft:`2px solid ${tc}55`,textAlign:"left"}}>{session.anchor}</p>
                       </div>
                     )}
                   </div>
